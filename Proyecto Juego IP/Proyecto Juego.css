@@ -6,4 +6,9 @@ body {
    height: 30px;
    width: 30px;     
 }
-/* el tamaño del fondo del juego sera de 500px por 1000px */
+#imagenFondo {
+    height: 500px;
+    width: 800px;
+    margin-left: 20%;
+}
+/* el tamaño del fondo del juego sera de 500px por 800px */
