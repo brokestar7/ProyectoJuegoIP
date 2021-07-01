@@ -10,8 +10,8 @@ function  iniciarJuego() {
 }
 function generarVidas() {
 console.log("entra en la funcion");
-    for(i=0;i<=20;i++) {
-    document.getElementById("contenedorCorazones").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
+    for(i=0;i<20;i++) {
+    document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
     }
 }
 function randomizar() {
@@ -31,14 +31,20 @@ function generarEnemigo() {
     document.getElementById("enemigo").innerHTML = "<img class='spriteEnemigo' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
-    //generarCombate();
+    generarCombate();
 }
 
 function generarVidasEnemigo(){
 
-    for(i=0;i<=20;i++) {
-        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
+    for(i=0;i<20;i++) {
+        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
         }
+}
+
+function generarCombate(){
+
+    mostrarLayoutAtaques();
+
 }
 
 function inicializar(){
@@ -47,12 +53,6 @@ function inicializar(){
     document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
 
 }
-
-
-
-// function generarCombate(){
-//     mostrarLayoutAtaques();
-
 
 
 // }
