@@ -14,7 +14,7 @@ function randomizar() {
 } 
 function generarVidas() {
     for(i=0;i<=20;i++) {
-    document.getElementById("contenedorCorazones").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
+    document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
     }
 }
 function randomizar() {
@@ -40,15 +40,14 @@ function generarEnemigo() {
 function generarVidasEnemigo(){
 
     for(i=0;i<=20;i++) {
-        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
+        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
         }
 }
 
 function inicializar(){
-
     document.getElementById("contenedorCorazones").innerHTML ="";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
-
+    console.log("que pasa aqui?");
 }
 
 
@@ -73,4 +72,6 @@ function inicializar(){
 // }
 function inicializar() {
     document.getElementById("contenedorCorazones").innerHTML = "";
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+    
 }

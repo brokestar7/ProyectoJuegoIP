@@ -1,15 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
     background-color: aqua;
     margin-left: 25%;
 
 }
-#imgCorazon {
+.imgCorazon {
    height: 30px;
    width: 30px;     
 }
 #imagenFondo {
     height: 500px;
     width: 800px;
-    margin-left: 20%;
 }
 /* el tamaño del fondo del juego sera de 500px por 800px */
