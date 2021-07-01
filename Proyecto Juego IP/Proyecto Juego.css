@@ -2,17 +2,38 @@
     padding: 0;
     margin: 0;
 }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.gridElement {
+    background: grey;
+    padding: 1em;
+    margin: 10px;
+}
 body {
     background-color: aqua;
-    margin-left: 25%;
-
+    
 }
+.titulo {
+    text-align: center;
+}
+button {
+    margin-left: 25%;
+}
+/* #contenedorCorazones {
+    margin-left: 25%;
+} */
+/* #contenedorCorazonesEnemigo{
+    margin-left: 25%;
+} */
 .imgCorazon {
-   height: 30px;
-   width: 30px;     
+    height: 18px;
+    width: 18px;     
 }
 #imagenFondo {
     height: 500px;
     width: 800px;
 }
+
 /* el tamaño del fondo del juego sera de 500px por 800px */

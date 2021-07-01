@@ -2,18 +2,17 @@
 let arrFondos=["fondoCastillo1.gif","fondoMontaña1.gif","fondoRioDia.gif","fondoRioDia2.gif"];
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
+let contadorCorazones = 0;
+let contadorCorazonesEnemigo = 0;   
 
 function  iniciarJuego() {
     inicializar();
     generarVidas();
     randomizar();
 }
-function randomizar() {
-    generarFondo();
-    // generarEnemigo();
-} 
+ 
 function generarVidas() {
-    for(i=0;i<=20;i++) {
+    for(i=0;i<20;i++) {
     document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
     }
 }
@@ -38,8 +37,7 @@ function generarEnemigo() {
 }
 
 function generarVidasEnemigo(){
-
-    for(i=0;i<=20;i++) {
+    for(i=0;i<20;i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
         }
 }
@@ -47,7 +45,6 @@ function generarVidasEnemigo(){
 function inicializar(){
     document.getElementById("contenedorCorazones").innerHTML ="";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
-    console.log("que pasa aqui?");
 }
 
 
