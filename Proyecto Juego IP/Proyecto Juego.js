@@ -23,27 +23,35 @@ function randomizar() {
 } 
 
 function generarFondo() {
-numeroAleatorioFondo= Math.floor(Math.random () *4);
-document.getElementById("fondoJuego").innerHTML = "<img id='imagenFondo' src='Imagenes proyecto juego/"+arrFondos[numeroAleatorioFondo]+"'>"
+    numeroAleatorioFondo= Math.floor(Math.random () *4);
+    document.getElementById("fondoJuego").innerHTML = "<img id='imagenFondo' src='Imagenes proyecto juego/"+arrFondos[numeroAleatorioFondo]+"'>"
 
 }
 
 function generarEnemigo() {
     numeroAleatorioEnemigo = Math.floor(Math.random () *3)+1;
-    alert(numeroAleatorioEnemigo);
+    //alert(numeroAleatorioEnemigo);
     document.getElementById("enemigo").innerHTML = "<img class='spriteEnemigo' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     //class spriteEnemigo para despues modificarlo en el css
-    //generarVidasEnemigo();
+    generarVidasEnemigo();
     //generarCombate();
 }
 
 function generarVidasEnemigo(){
 
     for(i=0;i<=20;i++) {
-        document.getElementById("contenedorCorazones").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
+        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img id='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
         }
+}
+
+function inicializar(){
+
+    document.getElementById("contenedorCorazones").innerHTML ="";
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
 
 }
+
+
 
 // function generarCombate(){
 //     mostrarLayoutAtaques();
