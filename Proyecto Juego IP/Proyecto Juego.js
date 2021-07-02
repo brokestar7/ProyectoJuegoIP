@@ -2,14 +2,16 @@
 let arrFondos=["fondoCastillo1.gif","fondoMontaña1.gif","fondoRioDia.gif","fondoRioDia2.gif"];
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
+let contadorCorazones = 0;
+let contadorCorazonesEnemigo = 0;   
 
 function  iniciarJuego() {
     inicializar();
     generarVidas();
     randomizar();
 }
+ 
 function generarVidas() {
-console.log("entra en la funcion");
     for(i=0;i<20;i++) {
     document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
     }
@@ -35,16 +37,14 @@ function generarEnemigo() {
 }
 
 function generarVidasEnemigo(){
-
     for(i=0;i<20;i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>"; 
         }
 }
 
-function generarCombate(){
-
-    mostrarLayoutAtaques();
-
+function inicializar(){
+    document.getElementById("contenedorCorazones").innerHTML ="";
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
 }
 
 function inicializar(){
@@ -68,3 +68,8 @@ function inicializar(){
 // function generarEnemigo(){
 //     generarAtaquesEnemigo();
 // }
+function inicializar() {
+    document.getElementById("contenedorCorazones").innerHTML = "";
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+    
+}
