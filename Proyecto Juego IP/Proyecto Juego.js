@@ -28,8 +28,8 @@ function generarFondo() {
 }
 
 function generarEnemigo() {
-    numeroAleatorioEnemigo = Math.floor(Math.random () *3)+1;
-    //alert(numeroAleatorioEnemigo);
+    numeroAleatorioEnemigo = Math.floor(Math.random () *10)+1;
+    alert(numeroAleatorioEnemigo);
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
