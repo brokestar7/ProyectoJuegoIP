@@ -6,7 +6,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 18% 64% 18%;
 }
 
 .gridAnidadoMenuInferior {
@@ -28,8 +28,8 @@
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
-    padding: 1em;
-    margin: 10px;
+    padding: 10px;
+    margin: 10px 14px;
     color: #130f40;
 }
 
@@ -47,9 +47,9 @@ body {
     border-radius: 20px;
     background: #c7ecee;
     text-align: center;
-    padding: 30px;
-    margin: 10px 255px;
-    font-size: 40px;
+    padding: 10px 30px;
+    margin: 5px 14px;
+    font-size: 30px;
     color: #130f40;
 }
 
@@ -71,13 +71,15 @@ button {
 }
 
 #imagenFondo {
-    height: 500px;
-    width: 800px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    /* 600*800 */
 }
 
 .sprites {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
 
 /* el tamaño del fondo del juego sera de 500px por 800px */
