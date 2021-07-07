@@ -6,11 +6,11 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-columns: 18% 64% 18%;
+    grid-template-columns: 16% 68% 16%;
 }
 
 .gridAnidadoMenuInferior {
+    margin: 15px;
     display: grid;
     grid-template-columns: 65% 35%;
 }
@@ -29,20 +29,17 @@
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
-    padding: 1em;
-    margin: 10px;
-    padding: 10px;
-    margin: 10px 14px;
+    margin: 5px 10px 10px 5px;
+    padding: 12px;
     color: #130f40;
 }
 
-.gridElementSprites {
+.gridElementSpriteUsuario {
     background: #22a6b3;
 }
 
 body {
     background-color: #22a6b3;
-
 }
 
 .titulo {
@@ -51,11 +48,8 @@ body {
     border-radius: 20px;
     background: #c7ecee;
     text-align: center;
-    padding: 30px;
-    margin: 10px 255px;
-    font-size: 40px;
-    padding: 10px 30px;
-    margin: 5px 14px;
+    padding: 25px;
+    margin: 10px;
     font-size: 30px;
     color: #130f40;
 }
@@ -74,24 +68,27 @@ button {
 
 .imgCorazon {
     height: 18px;
-    width: 18px;     
     width: 18px;
 }
 
-#imagenFondo {
-    height: 500px;
-    width: 800px;
-    height: 100%;
+.imagenFondo {
+    height: auto;
     width: 100%;
+    max-height: 490px;
     border-radius: 10px;
-    /* 600*800 */
 }
 
 .sprites {
-    height: 200px;
-    width: 200px;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
+
+.layoutAtaques {
+    margin-left: 0;
+}
+
+/* .gridElementSprites {
+} */
+
 
 /* el tamaño del fondo del juego sera de 500px por 800px */
