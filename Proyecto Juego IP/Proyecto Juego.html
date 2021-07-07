@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,50 +13,68 @@
     <link rel="stylesheet" href="Proyecto Juego.css">
     <title>Archivo Prueba</title>
 </head>
-<body>
+
+<body onload="reproducirMusicaFondo1()">
+
+    
     <div>
         <h1 class="titulo">Este es un titulo</h1>
         <!-- comentario para ver si funciona la ramaDani -->
     </div>
-    
+
     <div class="grid">
-        <div class="gridElement">Salud Enemigo
+        <div class="gridElement ">Salud Enemigo
             <div id="contenedorCorazonesEnemigo">
             </div>
         </div>
-
-        <div class="gridElement">
-            <div id="fondoJuego">
-                <img src="Imagenes proyecto juego/fondoPraderaDia.jpg" width="800px" height="500px" >
-            </div> 
+        <div  id="fondoJuego" class="gridElement">
+        <img src="Imagenes personajes/personaje3.gif" >
         </div>
-
-        <div class="gridElement">Salud Usuario
+        <div class="gridElement ">Salud Usuario
             <div id="contenedorCorazones">
             </div>
         </div>
-
         <div class="gridElementSprites">
             <div id="enemigo">
+
             </div>
         </div>
-
         <div class="gridElement">
             <div class="gridAnidadoMenuInferior">
-                <div class="cuadroHistoria"></div>
+                <div class="cuadroHistoria">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti,
+                    necessitatibus.</div>
                 <div class="cuadroMenu">
-
-                    <button type="button" onclick="iniciarJuego()">Iniciar Juego</button>
-                    
+                    <button type="button" onclick="iniciarJuego()">¡JUGAR!</button>
+                    Lorem ipsum dolor sit
                 </div>
-                
             </div>
         </div>
-
-        <div class="gridElementSprites">
-            <img class="sprites" src="Imagenes personajes/personaje1.gif" alt="spriteUsuario">
+        <div id="spriteUsuario" class="gridElementSpriteUsuario">
         </div>
+        
     </div>
+    <div id="reproductorMusica">
+
+            <audio id="reproductorMusica" loop>
+                    <source src="musica/8 bit I.mp3" type="audio/mp3">
+            </audio>
+                  
+    </div>
+
+<script>
+
+    function reproducirMusicaFondo1(){
+
+        let audio = new Audio('musica/8 bit I.mp3');
+        audio.play();
+        audio.loop = true;
+        alert("llega");
+    }
+
+
+
+</script>
     
 </body>
+
 </html>

@@ -7,6 +7,7 @@ let contadorCorazonesEnemigo = 0;
 
 function  iniciarJuego() {
     inicializar();
+    reproducirMusicaFondo2();
     generarVidas();
     randomizar();
 }
@@ -46,8 +47,33 @@ function inicializar(){
     document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
 }
 
+function reproducirMusicaFondo1(){
 
+    let audio = new Audio('musica/8 bit I.mp3');
+    audio.play();
+    audio.loop = true;
+}
 
+function reproducirMusicaFondo2(){
+
+    let audio = new Audio('musica/8 bit II.mp3');
+    audio.play();
+    audio.loop = true;
+     
+}
+
+function reproducirMusicaBoss(){
+
+    let audio = new Audio('musica/8 bit BOSS.mp3');
+    audio.play();
+    audio.loop = true;
+}
+
+/*function startAutoplay(){
+    setInterval(function(){ 
+      reproducirMusicaFondo();
+   }, );
+  }
 
 
 // function compararCombate(ataqueEscogido) {
@@ -58,4 +84,4 @@ function inicializar(){
 // }
 // function generarEnemigo(){
 //     generarAtaquesEnemigo();
-// }
+// }*/
