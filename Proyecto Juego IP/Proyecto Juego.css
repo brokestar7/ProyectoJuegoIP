@@ -3,83 +3,70 @@
     margin: 0;
     font-family: 'Press Start 2P', cursive;
 }
-
 .grid {
     display: grid;
-    grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 100%;
+    grid-template-columns: repeat(3,1fr);
 }
-
-.gridAnidadoMenuInferior {
-    display: grid;
-    grid-template-columns: 65% 35%;
-}
-
-.cuadroHistoria {
-    border: black 2px solid;
-}
-
-.cuadroMenu {
-    border: black 2px solid;
-    background-color: #dff9fb;
-}
-
 .gridElement {
     border: #535c68 4px solid;
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
-    padding: 12px;
+    padding: 1em;
     margin: 10px;
     color: #130f40;
 }
-.gridElementSpriteUsuario {
+.gridElementSprites {
     background: #22a6b3;
+}
+.gridAnidadoMenuInferior{
+
+    display: grid;
+    grid-template-columns: 70%;
+}
+
+.cuadroHistoria{
+
+    
+
+    }
+
+.cuadroMenu{
+
+
+
 }
 
 body {
     background-color: #22a6b3;
-}
 
+}
 .titulo {
     border: #535c68 4px solid;
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
     text-align: center;
-    padding: 25px;
-    margin: 10px;
-    font-size: 30px;
+    padding: 30px;
+    margin: 10px 255px;
+    font-size: 40px;
     color: #130f40;
 }
-
 button {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-left: 25%;
-    margin-right: 20%;
-    background-color: #f9ca24;
-    border: #535c68 2px solid;
-    color: #130f40;
-    padding: 2px;
-    cursor: pointer;
-}
+    margin-left: 80%;
 
+}
 .imgCorazon {
     height: 18px;
-    width: 18px;
+    width: 18px;     
 }
-
-#fondoJuego {
-    background-image: url("Imagenes proyecto juego/fondoPraderaDia.jpg");
-    background-size: 100% 100%;
-
+#imagenFondo {
+    height: 500px;
+    width: 800px;
 }
-
 .sprites {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
-
 
 /* el tamaño del fondo del juego sera de 500px por 800px */
