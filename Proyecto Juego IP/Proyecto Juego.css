@@ -7,10 +7,10 @@
 .grid {
     display: grid;
     grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 100%;
 }
 
 .gridAnidadoMenuInferior {
+    margin: 15px;
     display: grid;
     grid-template-columns: 65% 35%;
 }
@@ -29,10 +29,11 @@
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
+    margin: 5px 10px 10px 5px;
     padding: 12px;
-    margin: 10px;
     color: #130f40;
 }
+
 .gridElementSpriteUsuario {
     background: #22a6b3;
 }
@@ -70,16 +71,24 @@ button {
     width: 18px;
 }
 
-#fondoJuego {
-    background-image: url("Imagenes proyecto juego/fondoPraderaDia.jpg");
-    background-size: 100% 100%;
-
+.imagenFondo {
+    height: auto;
+    width: 100%;
+    max-height: 490px;
+    border-radius: 10px;
 }
 
 .sprites {
     height: 150px;
     width: 150px;
 }
+
+.layoutAtaques {
+    margin-left: 0;
+}
+
+/* .gridElementSprites {
+} */
 
 
 /* el tamaño del fondo del juego sera de 500px por 800px */
