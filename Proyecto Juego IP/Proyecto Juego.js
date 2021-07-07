@@ -70,7 +70,7 @@ function generarAtaquesEnemigo(){
     //console.log("ataque enemigo "+numeroAletorioAtaque)
 }
 
-function compararCombate(ataqueEscogido) {
+/*function compararCombate(ataqueEscogido) {
     //ataque escogido es 0 (ataque 1)
    if (ataqueEscogido==0){
         //document.getElementById("").innerHTML="Ha infligido 100 de daño"
@@ -85,4 +85,3 @@ function compararCombate(ataqueEscogido) {
 //     quitarVidaEnemigo();
 //     restarMp();*/
 
-}
