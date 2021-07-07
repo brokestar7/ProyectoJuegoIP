@@ -1,11 +1,10 @@
-
-let arrFondos=["fondoCastillo1.gif","fondoMontaña1.gif","fondoRioDia.gif","fondoRioDia2.gif"];
+let arrFondos = ["fondoCastillo1.gif", "fondoMontaña1.gif", "fondoRioDia.gif", "fondoRioDia2.gif"];
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let contadorCorazones = 0;
-let contadorCorazonesEnemigo = 0;   
+let contadorCorazonesEnemigo = 0;
 
-function  iniciarJuego() {
+function iniciarJuego() {
     inicializar();
     generarVidas();
     generarSpriteUsuario();
@@ -15,14 +14,19 @@ function generarSpriteUsuario() {
     document.getElementById("spriteUsuario").innerHTML = "<img class='sprites' src='Imagenes personajes/personaje3.gif' alt='spriteUsuario'>";
 }
 function generarVidas() {
-    for(i=0;i<20;i++) {
-    document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>"; 
+    for (i = 0; i < 20; i++) {
+        document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>";
     }
 }
+
+function generarSpriteUsuario() {
+    document.getElementById("spriteUsuario").innerHTML = "<img class='sprites' src='Imagenes personajes/personaje3.gif' alt='spriteUsuario'>";
+}
+
 function randomizar() {
     generarFondo();
     generarEnemigo();
-} 
+}
 
 function generarFondo() {
     numeroAleatorioFondo= Math.floor(Math.random () *4);
@@ -30,9 +34,8 @@ function generarFondo() {
 }
 
 function generarEnemigo() {
-    numeroAleatorioEnemigo = Math.floor(Math.random () *10)+1;
+    numeroAleatorioEnemigo = Math.floor(Math.random() * 10) + 1;
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
-    //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
     // generarCombate();
 }
