@@ -59,7 +59,7 @@ function generarCombate(){
     for (i=0;i<5;i++){
         document.getElementById("botonesAtaques").innerHTML+=
         "<br> <a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutTotales("+i+")'> "+arrAtaques[i]+
-        "<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='75px' height='75px' >"+" </a><br> ";
+        "<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='25px' height='25px' >"+" </a><br> ";
         compararCombate();
     }
 }
