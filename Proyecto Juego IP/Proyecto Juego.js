@@ -1,7 +1,10 @@
 
 let arrFondos=["fondoCastillo1.gif","fondoMontaña1.gif","fondoRioDia.gif","fondoRioDia2.gif"];
+let arrAtaques=["Ataque","Ataque","Ataque","Vida","Defensa"];
+let arrImgAtaques=["espada4.png","espada2.png","espada10.gif","pocionVida.png","shield.png"];
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
+let numeroAletorioAtaque;
 let contadorCorazones = 0;
 let contadorCorazonesEnemigo = 0;   
 
@@ -19,6 +22,7 @@ function generarVidas() {
 function randomizar() {
     generarFondo();
     generarEnemigo();
+    
 } 
 
 function generarFondo() {
@@ -29,11 +33,13 @@ function generarFondo() {
 
 function generarEnemigo() {
     numeroAleatorioEnemigo = Math.floor(Math.random () *10)+1;
-    alert(numeroAleatorioEnemigo);
+    //alert(numeroAleatorioEnemigo);
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
     generarCombate();
+    generarAtaquesEnemigo();
+    
 }
 
 function generarVidasEnemigo(){
@@ -47,29 +53,36 @@ function inicializar(){
     document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
 }
 
-function inicializar(){
 
-    document.getElementById("contenedorCorazones").innerHTML ="";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML ="";
-
+//5 botones de ataque del usuario (3 ataques, 1 defensa y 1 pocima de recuperación)
+function generarCombate(){
+    for (i=0;i<5;i++){
+        document.getElementById("botonesAtaques").innerHTML+=
+        "<br> <a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutTotales("+i+")'> "+arrAtaques[i]+
+        "<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='75px' height='75px' >"+" </a><br> ";
+        compararCombate();
+    }
 }
 
+//aletorio de los ataques que realiza el enemigo
+function generarAtaquesEnemigo(){
+    numeroAletorioAtaque=Math.floor(Math.random () *3);
+    //console.log("ataque enemigo "+numeroAletorioAtaque)
+}
 
-// }
-// function generarLayoutAtaques(){
-//     compararCombate();
-// }
-// function compararCombate(ataqueEscogido) {
-//     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
-//     quitarVidaHumano();
+function compararCombate(ataqueEscogido) {
+    //ataque escogido es 0 (ataque 1)
+   if (ataqueEscogido==0){
+        //document.getElementById("").innerHTML="Ha infligido 100 de daño"
+    }
+
+  
+//     
+ 
+
+     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
+ //    quitarVidaHumano();
 //     quitarVidaEnemigo();
-//     restarMp();
-// }
-// function generarEnemigo(){
-//     generarAtaquesEnemigo();
-// }
-function inicializar() {
-    document.getElementById("contenedorCorazones").innerHTML = "";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
-    
+//     restarMp();*/
+
 }

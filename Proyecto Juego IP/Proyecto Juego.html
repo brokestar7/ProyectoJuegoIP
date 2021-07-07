@@ -19,30 +19,36 @@
     </div>
     
     <div class="grid">
+
         <div class="gridElement">Salud Enemigo
-            <div id="contenedorCorazonesEnemigo">
-            </div>
+            <div id="contenedorCorazonesEnemigo"></div>
+         <!--   <div class="layoutTotalAtaques"></div>
+
+            <div id="layoutTotalMana"></div>-->
         </div>
+
         <div class="gridElement">
             <div id="fondoJuego">
-                <img src="Imagenes proyecto juego/fondoPraderaDia.jpg" width="800px" height="500px" >
-            </div>
-            
+                <img src="Imagenes proyecto juego/fondoPraderaDia.jpg" width="800px" height="500px" ></div>
         </div>
+
+
         <div class="gridElement">Salud Usuario
-            <div id="contenedorCorazones">
-            </div>
+            <div id="contenedorCorazones"></div>
+            <div id="botonesAtaques"></div>
+        </div>
+
+
+        <div class="gridElementSprites">
+            <div id="enemigo"></div>
+        </div>
+
+        <div class="gridElement">
+           <div> <button type="button" onclick="iniciarJuego()">Iniciar Juego</button></div>
         </div>
         <div class="gridElementSprites">
-            <div id="enemigo">
-            
-            </div>
+            <img class="sprites" src="Imagenes personajes/personaje1.gif" alt="spriteUsuario"></div>
         </div>
-        <div class="gridElement"></div>
-        <div class="gridElementSprites">
-            <img class="sprites" src="Imagenes personajes/personaje1.gif" alt="spriteUsuario">
-        </div>
-    </div>
-    <button type="button" onclick="iniciarJuego()">Iniciar Juego</button>
+    
 </body>
 </html>

@@ -3,10 +3,27 @@
     margin: 0;
     font-family: 'Press Start 2P', cursive;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 18% 64% 18%;
 }
+
+.gridAnidadoMenuInferior {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.cuadroHistoria {
+    border: black 2px solid;
+}
+
+.cuadroMenu {
+    border: black 2px solid;
+    background-color: #dff9fb;
+}
+
 .gridElement {
     border: #535c68 4px solid;
     box-shadow: #535c68 10px 8px 6px;
@@ -14,15 +31,20 @@
     background: #c7ecee;
     padding: 1em;
     margin: 10px;
+    padding: 10px;
+    margin: 10px 14px;
     color: #130f40;
 }
+
 .gridElementSprites {
     background: #22a6b3;
 }
+
 body {
     background-color: #22a6b3;
 
 }
+
 .titulo {
     border: #535c68 4px solid;
     box-shadow: #535c68 10px 8px 6px;
@@ -32,22 +54,44 @@ body {
     padding: 30px;
     margin: 10px 255px;
     font-size: 40px;
+    padding: 10px 30px;
+    margin: 5px 14px;
+    font-size: 30px;
     color: #130f40;
 }
+
 button {
+    font-size: 15px;
+    margin-top: 5px;
     margin-left: 25%;
+    margin-right: 20%;
+    background-color: #f9ca24;
+    border: #535c68 2px solid;
+    color: #130f40;
+    padding: 2px;
+    cursor: pointer;
 }
+
 .imgCorazon {
     height: 18px;
     width: 18px;     
+    width: 18px;
 }
+
 #imagenFondo {
     height: 500px;
     width: 800px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    /* 600*800 */
 }
+
 .sprites {
     height: 200px;
     width: 200px;
+    height: 100px;
+    width: 100px;
 }
 
 /* el tamaño del fondo del juego sera de 500px por 800px */
