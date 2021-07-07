@@ -7,7 +7,7 @@ let contadorCorazonesEnemigo = 0;
 
 function  iniciarJuego() {
     inicializar();
-    reproducirMusicaFondo2();
+    //reproducirMusicaFondo2();
     generarVidas();
     randomizar();
 }

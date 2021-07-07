@@ -51,29 +51,16 @@
         </div>
         <div id="spriteUsuario" class="gridElementSpriteUsuario">
         </div>
-        
-    </div>
-    <div id="reproductorMusica">
-
-            <audio id="reproductorMusica" loop>
-                    <source src="musica/8 bit I.mp3" type="audio/mp3">
-            </audio>
-                  
     </div>
 
-<script>
+      <audio src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo2" loop="loop"></audio>
 
-    function reproducirMusicaFondo1(){
-
-        let audio = new Audio('musica/8 bit I.mp3');
-        audio.play();
-        audio.loop = true;
-        alert("llega");
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById("musicaFondo2").play();
+      //alert("llega");
     }
-
-
-
-</script>
+  </script>
     
 </body>
 
