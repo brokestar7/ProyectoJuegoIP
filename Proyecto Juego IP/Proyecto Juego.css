@@ -38,6 +38,25 @@
     color: #c7ecee;
 }
 
+.gridAnidadoInterfazUsuario>a {
+    border: 2px solid #535c68;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #130f40;
+    color: #c7ecee;
+}
+
+.gridAnidadoInterfazUsuario>a>img {
+    width: 20px;
+    height: 20px;
+}
+
+.gridAnidadoInterfazUsuario>a:hover {
+    background-color: #c7ecee;
+    color: #130f40;
+}
+
 .gridAnidadoInterfazUsuario>div:hover {
     background-color: #c7ecee;
     color: #130f40;

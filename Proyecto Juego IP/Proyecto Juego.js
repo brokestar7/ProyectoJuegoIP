@@ -4,8 +4,8 @@ let arrImgAtaques = ["espada4.png", "espada11.gif", "espada12.gif", "pocionVida.
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let numeroAletorioAtaque;
-let contadorCorazones = 0;
-let contadorCorazonesEnemigo = 0;
+let contenedorCorazones = 0;
+let contenedorCorazonesEnemigo = 0;
 
 function iniciarJuego() {
     inicializar();
@@ -14,8 +14,10 @@ function iniciarJuego() {
     randomizar();
 }
 
-function generarSpriteUsuario() {
-    document.getElementById("spriteUsuario").innerHTML = "<img class='sprites' src='Imagenes personajes/personaje3.gif' alt='spriteUsuario'>";
+
+function inicializar() {
+    document.getElementById("contenedorCorazones").innerHTML = "";
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
 }
 
 function generarVidas() {
@@ -27,6 +29,7 @@ function generarVidas() {
 function generarSpriteUsuario() {
     document.getElementById("spriteUsuario").innerHTML = "<img class='sprites' src='Imagenes personajes/personaje3.gif' alt='spriteUsuario'>";
 }
+
 
 function randomizar() {
     generarFondo();
@@ -42,32 +45,13 @@ function generarEnemigo() {
     numeroAleatorioEnemigo = Math.floor(Math.random() * 10) + 1;
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     generarVidasEnemigo();
-    // generarCombate();
+    generarCombate();
 }
 
 function generarVidasEnemigo() {
     for (i = 0; i < 20; i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>";
     }
-}
-
-function inicializar() {
-    document.getElementById("contenedorCorazones").innerHTML = "";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
-}
-generarCombate();
-generarAtaquesEnemigo();
-}
-
-function generarVidasEnemigo() {
-    for (i = 0; i < 20; i++) {
-        document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>";
-    }
-}
-
-function inicializar() {
-    document.getElementById("contenedorCorazones").innerHTML = "";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
 }
 
 //5 botones de ataque del usuario (3 ataques, 1 defensa y 1 pocima de recuperación)
@@ -81,25 +65,12 @@ function generarCombate() {
 }
 
 function mostrarLayoutAtaques() {
-    document.getElementById("botonesAtaques").innerHTML =
-        "<br><a href='#' class='botonesAtaques0' onclick='generarLayoutTotales(0)'> " + arrAtaques[0] + " <img src='Imagenes objetos/" + arrImgAtaques[0] + "' width='50px' height='50px' >" + " </a> <br>" +
-        "<a href='#' class='botonesAtaques1' onclick='generarLayoutTotales(1)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "' width='50px' height='50px' >" + " </a> <br>" +
-        "<a href='#' class='botonesAtaques2' onclick='generarLayoutTotales(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "' width='50px' height='50px' >" + " </a> <br>" +
-        "<a href='#' class='botonesAtaques3' onclick='generarLayoutTotales(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "' width='50px' height='50px' >" + " </a> <br>" +
-        "<a href='#' class='botonesAtaques4' onclick='generarLayoutTotales(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "' width='50px' height='50px' >" + " </a> <br>";
-
-}
-
-
-function generarAtaquesEnemigo() {
-    numeroAletorioAtaque = Math.floor(Math.random() * 3);
-}
-
-function generarAtaques(ataqueEscogido) {
-    //     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
-    console.log("Usuario " + ataqueEscogido);
-    //si el ataque escogido es 0
-
+    document.getElementById("mostrarLayoutAtaques").innerHTML +=
+        "<div onclick='compararCombate(0)'> " + arrAtaques[0] + " <img src='Imagenes objetos/" + arrImgAtaques[0] + "'>" + " </div>" +
+        "<div onclick='compararCombate(1)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "'>" + " </div>" +
+        "<div onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>" +
+        "<div onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>" +
+        "<div onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
 
 }
 //     quitarVidaHumano();
