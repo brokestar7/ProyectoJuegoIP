@@ -4,8 +4,9 @@ let arrImgAtaques = ["espada4.png", "espada11.gif", "espada12.gif", "pocionVida.
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let numeroAletorioAtaque;
-let contenedorCorazones = 0;
-let contenedorCorazonesEnemigo = 0;
+let contadorCorazones = 0;
+let contadorCorazonesEnemigo = 0;
+let contadorMana= 100;
 
 function iniciarJuego() {
     inicializar();
@@ -17,6 +18,7 @@ function iniciarJuego() {
 function inicializar() {
     document.getElementById("contenedorCorazones").innerHTML = "";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+
 }
 
 function generarVidas() {
@@ -38,6 +40,7 @@ function randomizar() {
 function generarFondo() {
     numeroAleatorioFondo = Math.floor(Math.random() * 4);
     document.getElementById("fondoJuego").innerHTML = "<img class='imagenFondo' src='Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "'>";
+    //document.getElementById("fondo juego").innerHTML='<img class="imagenFondo" src="Imagenes proyecto juego/' + arrFondos[numeroAleatorioFondo];
 }
 
 function generarEnemigo() {
@@ -61,10 +64,11 @@ function generarCombate() {
           "<a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutAtaques("+i+")'> "+"<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='50px' height='50px' >"+" </a> ";
           compararCombate();
       }*/
-
+    
     document.getElementById("musicaFondo").src = "musica/8 bit I.mp3";
     //document que cambia el src del audio
     mostrarLayoutAtaques();
+    
 }
 
 function mostrarLayoutAtaques() {
@@ -74,6 +78,33 @@ function mostrarLayoutAtaques() {
         "<div onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>" +
         "<div onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>" +
         "<div onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
+
+}
+
+function compararCombate(opcionElegida){
+
+    switch(opcionElegida) {
+        case 0,1,2:
+          calcularDaño();
+          break;
+        case 3:
+          calcularSkillHeal();//añadir vida, añadir fx sonido
+          break;
+        case 4:
+          calcularSkillDefense();
+          break;
+      } 
+}
+
+function calcularSkillHeal(){
+
+    contadorCorazones;
+    contadorMana;
+    //heal resta 20 de mana
+    //suma 
+
+
+
 
 }
 
