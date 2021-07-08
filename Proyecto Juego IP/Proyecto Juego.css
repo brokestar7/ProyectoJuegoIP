@@ -87,6 +87,27 @@ button {
     margin-left: 0;
 }
 
+.img {
+    height: 50px;
+    width: 50px;
+}
+/*
+.botonesAtaques1 {
+    height: 50px;
+    width: 50px;
+}
+.botonesAtaques2 {
+    height: 50px;
+    width: 50px;
+}
+.botonesAtaques3 {
+    height: 50px;
+    width: 50px;
+}
+.botonesAtaques4 {
+    height: 50px;
+    width: 50px;
+}*/
 /* .gridElementSprites {
 } */
 

@@ -59,51 +59,69 @@ function inicializar() {
 
 //5 botones de ataque del usuario (3 ataques, 1 defensa y 1 pocima de recuperación)
 function generarCombate(){
+    mostrarLaoutAtaques();
   /* for (i=0;i<5;i++){
         document.getElementById("botonesAtaques").innerHTML
         "<a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutAtaques("+i+")'> "+"<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='50px' height='50px' >"+" </a> ";
         compararCombate();
     }*/
-
- 
+}
+ function mostrarLaoutAtaques(){
     document.getElementById("botonesAtaques").innerHTML=
-    "<br><a href='#' class='botonesAtaques0' onclick='generarLayoutTotales(0)'> "+arrAtaques[0]+" <img src='Imagenes objetos/"+arrImgAtaques[0]+"' width='50px' height='50px' >"+" </a> <br>"+
-    "<a href='#' class='botonesAtaques1' onclick='generarLayoutTotales(1)'> "+arrAtaques[1]+" <img src='Imagenes objetos/"+arrImgAtaques[1]+"' width='50px' height='50px' >"+" </a> <br>"+
-    "<a href='#' class='botonesAtaques2' onclick='generarLayoutTotales(2)'> "+arrAtaques[2]+" <img src='Imagenes objetos/"+arrImgAtaques[2]+"' width='50px' height='50px' >"+" </a> <br>"+
-    "<a href='#' class='botonesAtaques3' onclick='generarLayoutTotales(3)'> "+arrAtaques[3]+" <img src='Imagenes objetos/"+arrImgAtaques[3]+"' width='50px' height='50px' >"+" </a> <br>"+
-    "<a href='#' class='botonesAtaques4' onclick='generarLayoutTotales(4)'> "+arrAtaques[4]+" <img src='Imagenes objetos/"+arrImgAtaques[4]+"' width='50px' height='50px' >"+" </a> <br>";
-    compararCombate();
+    "<br><a href='#' onclick='compararCombate(0)'> "+arrAtaques[0]+" <img src='Imagenes objetos/"+arrImgAtaques[0]+"'  >"+" </a> <br>"+
+    "<a href='#'  onclick='compararCombate(1)'> "+arrAtaques[1]+" <img src='Imagenes objetos/"+arrImgAtaques[1]+"'  >"+" </a> <br>"+
+    "<a href='#'  onclick='compararCombate(2)'> "+arrAtaques[2]+" <img src='Imagenes objetos/"+arrImgAtaques[2]+"'  >"+" </a> <br>"+
+    "<a href='#'  onclick='compararCombate(3)'> "+arrAtaques[3]+" <img src='Imagenes objetos/"+arrImgAtaques[3]+"' >"+" </a> <br>"+
+    "<a href='#'  onclick='compararCombate(4)'> "+arrAtaques[4]+" <img src='Imagenes objetos/"+arrImgAtaques[4]+"' >"+" </a> <br>";
     
+   
 }
 
 function generarAtaquesEnemigo(){
     numeroAletorioAtaque=Math.floor(Math.random() * 3);
 }
 
- function generarAtaques(ataqueEscogido) {
-//     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
-    console.log("Usuario "+ataqueEscogido);
-    //si el ataque escogido es 0
-      
+function calcularSkillDefense(){
 
+    let defensa=Math.floor(Math.random() * 2);
+    console.log("defensa "+defensa);
+   
+    if (defensa==0){
+        document.getElementById("tipoDefensa").innerHTML="Se ha activado la defensa";
+       
+    }else{
+        document.getElementById("tipoDefensa").innerHTML="Recibes 100 de daño"
+        vidaUsuario=vidaUsuario-1;
+    
     }
-//     quitarVidaHumano();
-//     quitarVidaEnemigo();
-//     restarMp();
-// }
+}
 
- 
+function restarVida(perdedor){
+    if (perdedor =="hum") {
+        vidaUsuario--;
+        mostrarCorazones(vidaUsuario, "marcadorHum"); 
+    }
+    if (perdedor =="com") {
+        vidaEnemigo--;
+        mostrarCorazones(vidaEnemigo, "marcadorCom"); 
+    }
+}
+/*calcularSkillDefense
+Dentro de calcularBatalla()
+///
+1 bloquea el golpe
+2 recibe daño
+contador vida restarle.
 
- // }
-// function generarLayoutAtaques(){
-//     compararCombate();
-// }
+
+
+
+
+
+*/
 // function compararCombate(ataqueEscogido) {
 //     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
 //     quitarVidaHumano();
 //     quitarVidaEnemigo();
 //     restarMp();
-// }
-// function generarEnemigo(){
-//     generarAtaquesEnemigo();
 // }
