@@ -6,7 +6,7 @@ let contadorCorazonesEnemigo = 0;
 
 function iniciarJuego() {
     inicializar();
-    //reproducirMusicaFondo2();
+    reproducirMusicaFondo2();
     generarVidas();
     randomizar();
 }
@@ -88,4 +88,4 @@ function inicializar() {
     document.getElementById("contenedorCorazones").innerHTML = "";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
 
-}
+}*/

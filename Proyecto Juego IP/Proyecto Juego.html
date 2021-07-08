@@ -14,9 +14,9 @@
     <title>Archivo Prueba</title>
 </head>
 
-<body onload="reproducirMusicaFondo1()">
+<body>
 
-    
+
     <div>
         <h1 class="titulo">Este es un titulo</h1>
         <!-- comentario para ver si funciona la ramaDani -->
@@ -27,8 +27,8 @@
             <div id="contenedorCorazonesEnemigo">
             </div>
         </div>
-        <div  id="fondoJuego" class="gridElement">
-        <img src="Imagenes personajes/personaje3.gif" >
+        <div id="fondoJuego" class="gridElement">
+            <img src="Imagenes personajes/personaje3.gif">
         </div>
         <div class="gridElement ">Salud Usuario
             <div id="contenedorCorazones">
@@ -53,15 +53,10 @@
         </div>
     </div>
 
-      <audio src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo2" loop="loop"></audio>
+    <audio src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo2" autoplay loop="loop"></audio>
 
-  <script type="text/javascript">
-    window.onload=function(){
-      document.getElementById("musicaFondo2").play();
-      //alert("llega");
-    }
-  </script>
-    
+
+
 </body>
 
 </html>
