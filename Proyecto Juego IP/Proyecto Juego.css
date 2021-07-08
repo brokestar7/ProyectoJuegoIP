@@ -7,35 +7,88 @@
 .grid {
     display: grid;
     grid-template-columns: 16% 68% 16%;
-    grid-template-rows: 100%;
 }
 
 .gridAnidadoMenuInferior {
     display: grid;
     grid-template-columns: 65% 35%;
+    grid-template-rows: 125px;
+}
+
+.gridAnidadoInterfazUsuario {
+    display: grid;
+    border: #535c68 4px solid;
+    box-shadow: #535c68 10px 8px 6px;
+    border-radius: 20px;
+    background: #c7ecee;
+    margin: 5px 10px 10px 5px;
+    padding: 12px;
+    color: #130f40;
+    align-items: flex-start;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.layoutSkills {
+    border: 2px solid #535c68;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #130f40;
+    color: #c7ecee;
+}
+
+.layoutSkills>img {
+    width: 25px;
+    height: 25px;
+}
+
+.layoutSkills:hover {
+    background-color: #c7ecee;
+    color: #130f40;
 }
 
 .cuadroHistoria {
-    border: black 2px solid;
+    border: #535c68 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 13px;
+    overflow: scroll;
 }
 
 .cuadroMenu {
-    border: black 2px solid;
-    background-color: #dff9fb;
+    border: #535c68 2px solid;
+    background-color: #c7ecee;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 2px;
+    font-size: 14px;
 }
+
+.cuadroMenu>p {
+    margin: 5px;
+}
+
+
 
 .gridElement {
     border: #535c68 4px solid;
     box-shadow: #535c68 10px 8px 6px;
     border-radius: 20px;
     background: #c7ecee;
+    margin: 5px 10px 10px 5px;
     padding: 12px;
-    margin: 10px;
     color: #130f40;
 }
+
 .gridElementSpriteUsuario {
     background: #22a6b3;
+
 }
+
+/* .gridElementSprites {
+    
+} */
 
 body {
     background-color: #22a6b3;
@@ -47,7 +100,7 @@ body {
     border-radius: 20px;
     background: #c7ecee;
     text-align: center;
-    padding: 25px;
+    padding: 20px;
     margin: 10px;
     font-size: 30px;
     color: #130f40;
@@ -56,13 +109,15 @@ body {
 button {
     font-size: 15px;
     margin-top: 5px;
-    margin-left: 25%;
-    margin-right: 20%;
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-bottom: 3px;
     background-color: #f9ca24;
     border: #535c68 2px solid;
     color: #130f40;
-    padding: 2px;
+    padding: 4px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .imgCorazon {
@@ -70,9 +125,11 @@ button {
     width: 18px;
 }
 
-#fondoJuego {
-    background-image: url("Imagenes proyecto juego/fondoPraderaDia.jpg");
-    background-size: 100% 100%;
+.imagenFondo {
+    height: auto;
+    width: 100%;
+    max-height: 490px;
+    border-radius: 10px;
 
 }
 
@@ -80,12 +137,3 @@ button {
     height: 150px;
     width: 150px;
 }
-
-.reproductorMusica{
-
-    margin-left: 60%;
-    
-}
-
-
-/* el tamaño del fondo del juego sera de 500px por 800px */
