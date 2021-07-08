@@ -7,7 +7,6 @@ let contadorCorazonesEnemigo = 0;
 
 function  iniciarJuego() {
     inicializar();
-    //reproducirMusicaFondo2();
     generarVidas();
     randomizar();
 }
@@ -52,6 +51,7 @@ function reproducirMusicaFondo1(){
     let audio = new Audio('musica/8 bit I.mp3');
     audio.play();
     audio.loop = true;
+    
 }
 
 function reproducirMusicaFondo2(){
@@ -67,6 +67,12 @@ function reproducirMusicaBoss(){
     let audio = new Audio('musica/8 bit BOSS.mp3');
     audio.play();
     audio.loop = true;
+}
+
+function generarCombate(){
+
+    document.getElementById("musicaFondo").src="musica/8 bit I.mp3";
+    //cambia el src del audio
 }
 
 /*function startAutoplay(){
