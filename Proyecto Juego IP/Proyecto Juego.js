@@ -61,6 +61,9 @@ function generarCombate() {
           "<a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutAtaques("+i+")'> "+"<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='50px' height='50px' >"+" </a> ";
           compararCombate();
       }*/
+
+    document.getElementById("musicaFondo").src = "musica/8 bit I.mp3";
+    //document que cambia el src del audio
     mostrarLayoutAtaques();
 }
 
@@ -71,6 +74,10 @@ function mostrarLayoutAtaques() {
         "<div onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>" +
         "<div onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>" +
         "<div onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
+
+}
+
+function generarCombate() {
 
 }
 //     quitarVidaHumano();
