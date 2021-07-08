@@ -9,13 +9,13 @@ let contenedorCorazonesEnemigo = 0;
 
 function iniciarJuego() {
     inicializar();
-    generarVidas();
     randomizar();
+    generarVidas();
 }
 
 
 function inicializar() {
-    document.getElementById("contenedorCorazones").innerHTML = "";
+    document.getElementsByClassName("layoutSkills").innerHTML = "";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
 }
 
@@ -68,13 +68,13 @@ function generarCombate() {
 }
 
 function mostrarLayoutAtaques() {
-    document.getElementById("mostrarLayoutAtaques").innerHTML +=
-        "<div onclick='compararCombate(0)'> " + arrAtaques[0] + " <img src='Imagenes objetos/" + arrImgAtaques[0] + "'>" + " </div>" +
-        "<div onclick='compararCombate(1)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "'>" + " </div>" +
-        "<div onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>" +
-        "<div onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>" +
-        "<div onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
-
+    document.getElementById("skill1").innerHTML = "<div class='layoutSkills'>Salud Usuario</div>";
+    document.getElementById("skill2").innerHTML = "<div id='contenedorCorazones' class='layoutSkills'></div>"
+    document.getElementById("skill3").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[0] + " <img src='Imagenes objetos/" + arrImgAtaques[0] + "'>" + " </div>";
+    document.getElementById("skill4").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "'>" + " </div>";
+    document.getElementById("skill5").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>";
+    document.getElementById("skill6").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>";
+    document.getElementById("skill7").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
 }
 
 
