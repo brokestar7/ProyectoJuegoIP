@@ -6,6 +6,7 @@ let contadorCorazonesEnemigo = 0;
 
 function iniciarJuego() {
     inicializar();
+    //reproducirMusicaFondo2();
     generarVidas();
     randomizar();
 }
@@ -24,12 +25,10 @@ function randomizar() {
 function generarFondo() {
     numeroAleatorioFondo = Math.floor(Math.random() * 4);
     document.getElementById("fondoJuego").innerHTML = "<img id='imagenFondo' src='Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "'>"
-
 }
 
 function generarEnemigo() {
     numeroAleatorioEnemigo = Math.floor(Math.random() * 10) + 1;
-    alert(numeroAleatorioEnemigo);
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
     //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
@@ -47,18 +46,35 @@ function inicializar() {
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
 }
 
-function inicializar() {
+function reproducirMusicaFondo1() {
 
-    document.getElementById("contenedorCorazones").innerHTML = "";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+    let audio = new Audio('musica/8 bit I.mp3');
+    audio.play();
+    audio.loop = true;
+}
+
+function reproducirMusicaFondo2() {
+
+    let audio = new Audio('musica/8 bit II.mp3');
+    audio.play();
+    audio.loop = true;
 
 }
 
+function reproducirMusicaBoss() {
 
-// }
-// function generarLayoutAtaques(){
-//     compararCombate();
-// }
+    let audio = new Audio('musica/8 bit BOSS.mp3');
+    audio.play();
+    audio.loop = true;
+}
+
+/*function startAutoplay(){
+    setInterval(function(){ 
+      reproducirMusicaFondo();
+   }, );
+  }
+
+
 // function compararCombate(ataqueEscogido) {
 //     //aqui se comparara el los ataques como si fuera un piedra papel y tijeras
 //     quitarVidaHumano();
