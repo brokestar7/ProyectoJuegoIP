@@ -10,7 +10,6 @@ let contenedorCorazonesEnemigo = 0;
 function iniciarJuego() {
     inicializar();
     generarVidas();
-    generarSpriteUsuario();
     randomizar();
 }
 
@@ -44,6 +43,7 @@ function generarFondo() {
 function generarEnemigo() {
     numeroAleatorioEnemigo = Math.floor(Math.random() * 10) + 1;
     document.getElementById("enemigo").innerHTML = "<img class='sprites' src='Imagenes enemigos/" + numeroAleatorioEnemigo + ".gif'>";
+    //class spriteEnemigo para despues modificarlo en el css
     generarVidasEnemigo();
     generarCombate();
 }
@@ -77,9 +77,7 @@ function mostrarLayoutAtaques() {
 
 }
 
-function generarCombate() {
 
-}
 //     quitarVidaHumano();
 //     quitarVidaEnemigo();
 //     restarMp();
