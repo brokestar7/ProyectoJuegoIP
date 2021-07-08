@@ -29,7 +29,7 @@
     text-transform: uppercase;
 }
 
-.gridAnidadoInterfazUsuario>div {
+.layoutSkills {
     border: 2px solid #535c68;
     border-radius: 10px;
     padding: 10px;
@@ -38,33 +38,14 @@
     color: #c7ecee;
 }
 
-.gridAnidadoInterfazUsuario>a {
-    border: 2px solid #535c68;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    background-color: #130f40;
-    color: #c7ecee;
+.layoutSkills>img {
+    width: 25px;
+    height: 25px;
 }
 
-.gridAnidadoInterfazUsuario>a>img {
-    width: 20px;
-    height: 20px;
-}
-
-.gridAnidadoInterfazUsuario>a:hover {
+.layoutSkills:hover {
     background-color: #c7ecee;
     color: #130f40;
-}
-
-.gridAnidadoInterfazUsuario>div:hover {
-    background-color: #c7ecee;
-    color: #130f40;
-}
-
-.gridAnidadoInterfazUsuario>div>img {
-    width: 20px;
-    height: 20px;
 }
 
 .cuadroHistoria {
