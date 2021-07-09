@@ -79,14 +79,14 @@ function generarAtaquesEnemigo(){
     let numAletorioAtaque=Math.floor(Math.random() * 3);
     console.log("Ataque enemigo"+numAletorioAtaque);
     if (numAletorioAtaque==0){
-        document.getElementById("txtAtaqueEnemigo").innerHTML="Se ha inflingido 10 de daño";
+        document.getElementById("txtAtaqueEnemigo").innerHTML+="<br>Se ha inflingido 10 de daño.";
         vidaUsuario=vidaUsuario-10;    
     }
     if (numAletorioAtaque==2){
-        document.getElementById("txtAtaqueEnemigo").innerHTML="Se ha inflingido 20 de daño";
+        document.getElementById("txtAtaqueEnemigo").innerHTML+="<br>Se ha inflingido 20 de daño.";
         vidaUsuario=vidaUsuario-20;
     }else{
-        document.getElementById("txtAtaqueEnemigo").innerHTML="Se ha activado la defensa";
+        document.getElementById("txtAtaqueEnemigo").innerHTML+="<br>Se ha activado la defensa.";
     }
     //10.20.def (defensaEnemigo)
     
@@ -98,10 +98,10 @@ function calcularSkillDefensa(){
     console.log("defensa usuario"+defensa);
    
     if (defensa==0){
-        document.getElementById("txtDefensa").innerHTML="Se ha activado la defensa";
+        document.getElementById("txtDefensa").innerHTML+="<br>Se ha activado la defensa.";
        
     }else{
-        document.getElementById("txtDefensa").innerHTML="Se ha inflingido 30 de daño";
+        document.getElementById("txtDefensa").innerHTML+="<br>Se ha inflingido 30 de daño.";
         vidaUsuario=vidaUsuario-30;
     
     }
@@ -113,10 +113,10 @@ let defensaEnemigo=Math.floor(Math.random() * 2);
 console.log("defensa enemigo"+defensaEnemigo);
 
 if (defensaEnemigo==0){
-    document.getElementById("txtDefensaEnemigo").innerHTML="Se ha activado la defensa";
+    document.getElementById("txtDefensaEnemigo").innerHTML+="<br>Se ha activado la defensa.";
    
 }else{
-    document.getElementById("txtDefensaEnemigo").innerHTML="Se ha inflingido 30 de daño";
+    document.getElementById("txtDefensaEnemigo").innerHTM+="<br>Se ha inflingido 30 de daño.";
     vidaEnemigo=vidaEnemigo-1;
 
 }
