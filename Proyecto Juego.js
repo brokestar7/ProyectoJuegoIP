@@ -5,7 +5,7 @@ let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let numeroAletorioAtaque;
 let contadorCorazones = 20;
-let contadorCorazonesEnemigo = 0;
+let contadorCorazonesEnemigo = 20;
 let contadorMana= 100;
 
 function iniciarJuego() {
@@ -52,7 +52,7 @@ function generarEnemigo() {
 }
 
 function generarVidasEnemigo() {
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < contadorCorazonesEnemigo; i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>";
     }
 }
@@ -84,7 +84,13 @@ function mostrarLayoutAtaques() {
 function compararCombate(opcionElegida){
 
     switch(opcionElegida) {
-        case 0,1,2:
+        case 0:
+          calcularDaño();
+          break;
+        case 1:
+          calcularDaño();
+          break; 
+        case 2:
           calcularDaño();
           break;
         case 3:
@@ -94,6 +100,12 @@ function compararCombate(opcionElegida){
           calcularSkillDefense();
           break;
       } 
+}
+
+function calcularDaño(){
+
+    alert("llega");
+
 }
 
 function calcularSkillHeal(){
@@ -111,14 +123,15 @@ function calcularSkillHeal(){
         document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
     }
 
-    alert("contador vidas " + contadorCorazones);
-    alert("contador mana " + contadorMana);
+    //alert("contador vidas " + contadorCorazones);
+    //alert("contador mana " + contadorMana);
 
     //document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
     //alert("llega");
 }
 
 function mutearMusica(){
+
     let backgroundMusic = document.getElementById("musicaFondo");
 
     backgroundMusic.muted = true;
