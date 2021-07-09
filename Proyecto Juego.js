@@ -4,23 +4,25 @@ let arrImgAtaques = ["espada4.png", "espada11.gif", "espada12.gif", "pocionVida.
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let numeroAletorioAtaque;
-let contenedorCorazones = 0;
-let contenedorCorazonesEnemigo = 0;
+let contadorCorazones = 20;
+let contadorCorazonesEnemigo = 20;
+let contadorMana = 100;
 
 function iniciarJuego() {
     inicializar();
     randomizar();
     generarVidas();
-}
 
+}
 
 function inicializar() {
     document.getElementsByClassName("layoutSkills").innerHTML = "";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+
 }
 
 function generarVidas() {
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < contadorCorazones; i++) {
         document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>";
     }
 }
@@ -49,7 +51,7 @@ function generarEnemigo() {
 }
 
 function generarVidasEnemigo() {
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < contadorCorazonesEnemigo; i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>";
     }
 }
@@ -65,22 +67,92 @@ function generarCombate() {
     document.getElementById("musicaFondo").src = "musica/8 bit I.mp3";
     //document que cambia el src del audio
     mostrarLayoutAtaques();
+
 }
 
 function mostrarLayoutAtaques() {
     document.getElementById("skill1").innerHTML = "<div class='layoutSkills'>Salud Usuario</div>";
     document.getElementById("skill2").innerHTML = "<div id='contenedorCorazones' class='layoutSkills'></div>"
     document.getElementById("skill3").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[0] + " <img src='Imagenes objetos/" + arrImgAtaques[0] + "'>" + " </div>";
-    document.getElementById("skill4").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "'>" + " </div>";
-    document.getElementById("skill5").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>";
-    document.getElementById("skill6").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>";
-    document.getElementById("skill7").innerHTML = "<div class='layoutSkills' onclick='compararCombate(0)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
+    document.getElementById("skill4").innerHTML = "<div class='layoutSkills' onclick='compararCombate(1)'> " + arrAtaques[1] + " <img src='Imagenes objetos/" + arrImgAtaques[1] + "'>" + " </div>";
+    document.getElementById("skill5").innerHTML = "<div class='layoutSkills' onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>";
+    document.getElementById("skill6").innerHTML = "<div class='layoutSkills' onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>";
+    document.getElementById("skill7").innerHTML = "<div class='layoutSkills' onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
 }
+
+function compararCombate(opcionElegida) {
+
+    switch (opcionElegida) {
+        case 0:
+            calcularDaño();
+            break;
+        case 1:
+            calcularDaño();
+            break;
+        case 2:
+            calcularDaño();
+            break;
+        case 3:
+            calcularSkillHeal(); //añadir vida, añadir fx sonido
+            break;
+        case 4:
+            calcularSkillDefense();
+            break;
+    }
+}
+
+function calcularDaño() {
+
+    alert("llega");
+
+}
+
+function calcularSkillHeal() {
+
+    if (contadorCorazones >= 18) {
+
+        contadorCorazones = contadorCorazones;
+        contadorMana = contadorMana;
+    } else {
+
+        contadorCorazones = contadorCorazones + 3; // vidas aumentan 3
+        contadorMana = contadorMana - 20;; // mana disminuye 20
+        document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
+    }
+
+    //alert("contador vidas " + contadorCorazones);
+    //alert("contador mana " + contadorMana);
+
+    //document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
+    //alert("llega");
+}
+
+function mutearMusica() {
+
+    let backgroundMusic = document.getElementById("musicaFondo");
+
+    backgroundMusic.muted = true;
+    document.getElementById("botonMusica").innerHTML = '<button type="button" onclick="desmutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/mute.png"></button>'
+}
+
+function desmutearMusica() {
+
+    let backgroundMusic = document.getElementById("musicaFondo");
+
+    backgroundMusic.muted = false;
+    document.getElementById("botonMusica").innerHTML = '<button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>'
+}
+
+
+
+
+
+
 
 
 //     quitarVidaHumano();
 //     quitarVidaEnemigo();
-//     restarMp();
+//     restarMp();           
 // }
 
 

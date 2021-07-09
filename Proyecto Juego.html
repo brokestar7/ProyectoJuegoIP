@@ -61,7 +61,9 @@
                     <div id="botonJuego">
                         <button type="button" onclick="iniciarJuego()">¡JUGAR!</button>
                     </div>
-                    <button type="button">MUSICA</button>
+                    <div id="botonMusica">
+                        <button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>
+                    </div>
                     <p>Record:</p>
                 </div>
             </div>
@@ -70,7 +72,8 @@
         </div>
     </div>
 
-    <audio autoplay src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo" loop="loop"></audio>
+    <audio autoplay src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo" loop="true"></audio>
+    <div id="fxSounds"></div>
 
 
 </body>

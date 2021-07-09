@@ -178,4 +178,8 @@ button {
     padding: 5px;
     font-size: 13px;
     overflow: scroll;
-}
+
+    .imgAltavoz {
+        height: 30px;
+        width: 30px;
+    }
