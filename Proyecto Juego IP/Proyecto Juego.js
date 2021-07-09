@@ -80,7 +80,7 @@ function generarAtaquesEnemigo(){
     console.log("Ataque enemigo"+numAletorioAtaque);
     if (numAletorioAtaque==0){
         document.getElementById("txtAtaqueEnemigo").innerHTML="Se ha inflingido 10 de daño";
-        //vidaUsuario=vidaUsuario-10;    
+        vidaUsuario=vidaUsuario-10;    
     }
     if (numAletorioAtaque==2){
         document.getElementById("txtAtaqueEnemigo").innerHTML="Se ha inflingido 20 de daño";
@@ -102,7 +102,7 @@ function calcularSkillDefensa(){
        
     }else{
         document.getElementById("txtDefensa").innerHTML="Se ha inflingido 30 de daño";
-        //vidaUsuario=vidaUsuario-30;
+        vidaUsuario=vidaUsuario-30;
     
     }
 }
@@ -117,7 +117,7 @@ if (defensaEnemigo==0){
    
 }else{
     document.getElementById("txtDefensaEnemigo").innerHTML="Se ha inflingido 30 de daño";
-    //vidaEnemigo=vidaEnemigo-1;
+    vidaEnemigo=vidaEnemigo-1;
 
 }
 }
