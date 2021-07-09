@@ -4,7 +4,7 @@ let arrImgAtaques = ["espada4.png", "espada11.gif", "espada12.gif", "pocionVida.
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
 let numeroAletorioAtaque;
-let contadorCorazones = 0;
+let contadorCorazones = 20;
 let contadorCorazonesEnemigo = 0;
 let contadorMana= 100;
 
@@ -15,7 +15,6 @@ function iniciarJuego() {
     
 }
 
-
 function inicializar() {
     document.getElementsByClassName("layoutSkills").innerHTML = "";
     document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
@@ -23,7 +22,7 @@ function inicializar() {
 }
 
 function generarVidas() {
-    for (i = 0; i < 20; i++) {
+    for (i = 0; i < contadorCorazones; i++) {
         document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>";
     }
 }
@@ -99,10 +98,24 @@ function compararCombate(opcionElegida){
 
 function calcularSkillHeal(){
 
-    contadorCorazones;// vidas aumentan 3
-    contadorMana;// mana disminuye 20
-    document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
-    alert("llega");
+    if(contadorCorazones >= 18){
+
+        contadorCorazones = contadorCorazones;
+        contadorMana = contadorMana;
+    }
+
+    else{
+
+        contadorCorazones = contadorCorazones + 3;// vidas aumentan 3
+        contadorMana = contadorMana - 20;;// mana disminuye 20
+        document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
+    }
+
+    alert("contador vidas " + contadorCorazones);
+    alert("contador mana " + contadorMana);
+
+    //document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
+    //alert("llega");
 }
 
 function mutearMusica(){
@@ -119,6 +132,13 @@ function desmutearMusica(){
     backgroundMusic.muted = false;
     document.getElementById("botonMusica").innerHTML= '<button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>'
 }
+
+
+
+
+
+
+
 
 //     quitarVidaHumano();
 //     quitarVidaEnemigo();
