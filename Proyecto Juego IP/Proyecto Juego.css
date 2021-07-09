@@ -178,24 +178,25 @@ button {
     padding: 5px;
     font-size: 13px;
     overflow: scroll;
+}
 
-    .imgAltavoz {
-        height: 30px;
-        width: 30px;
-    }
+.imgAltavoz {
+    height: 30px;
+    width: 30px;
+}
 
-    .daño {
-        color: red;
-    }
+.daño {
+    color: red;
+}
 
-    .defensa {
-        color: royalblue;
-    }
+.defensa {
+    color: royalblue;
+}
 
-    .defensaEnemigo {
-        color: rgb(39, 62, 133);
-    }
+.defensaEnemigo {
+    color: rgb(39, 62, 133);
+}
 
-    .dañoEnemigo {
-        color: rgb(172, 20, 20);
-    }
+.dañoEnemigo {
+    color: rgb(172, 20, 20);
+}
