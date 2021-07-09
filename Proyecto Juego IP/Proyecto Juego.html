@@ -13,27 +13,34 @@
     <link rel="stylesheet" href="Proyecto Juego.css">
     <title>Archivo Prueba</title>
 </head>
+<!-- actualizacin 07/08/2021 -->
 
 <body>
+
+
     <div>
         <h1 class="titulo">Este es un titulo</h1>
-
+        <!-- comentario para ver si funciona la ramaDani -->
     </div>
 
     <div class="grid">
         <div class="gridElement ">Salud Enemigo
             <div id="contenedorCorazonesEnemigo"></div>
-            <div id="tipoDefensa"></div>
-            
+            <div id="txtDefensa"></div>
+            <div id="txtDefensaEnemigo"></div>
+            <div id="txtAtaqueEnemigo"></div>
         </div>
         <div id="fondoJuego" class="gridElement">
             <img class="imagenFondo" src="Imagenes proyecto juego/fondoPraderaDia.jpg">
         </div>
-        <div class="gridElement ">Salud Usuario
-            <div id="contenedorCorazones"></div>
-            <div id="botonesAtaques" ></div>
-            
-            </div>
+        <div id="mostrarLayoutAtaques" class="gridAnidadoInterfazUsuario">
+            <div id="skill1"></div>
+            <div id="skill2"></div>
+            <div id="skill3"></div>
+            <div id="skill4"></div>
+            <div id="skill5"></div>
+            <div id="skill6"></div>
+            <div id="skill7"></div>
         </div>
         <div class="gridElementSprites">
             <div id="enemigo">
@@ -42,21 +49,29 @@
         </div>
         <div class="gridElement">
             <div class="gridAnidadoMenuInferior">
-                <div class="cuadroHistoria">En un mundo donde todo parecen normal, algo ha ido cambiando. Una fuerza oscura ha empezado a emerger y ganar poder. 
+                <div class="cuadroHistoria">
+                    En un mundo donde todo parecen normal, algo ha ido cambiando. Una fuerza oscura ha empezado a emerger y ganar poder. 
                     Varios guerreros han intentado luchar contra ella, pero al final son vencidos por el oscuro deseo de su corazón convirtiéndoles en seres irreconocibles. 
                     Los guerreros caídos han estado encerrados en sus mentes, ¿Serás tú guerrero misterioso quién los libere? 
-                    Esperemos que tu corazón sea digno de superar los retos de la travesía y dar fin al reinado del terror...
-                
-                    </div>
+                    Esperemos que tu corazón sea digno de superar los retos de la travesía y dar fin al reinado del oscuridad..
+
+                </div>
                 <div class="cuadroMenu">
-                    <button type="button" onclick="iniciarJuego()">¡JUGAR!</button>
-                  
+                    <div id="botonJuego">
+                        <button type="button" onclick="iniciarJuego()">¡JUGAR!</button>
+                    </div>
+                    <button type="button">MUSICA</button>
+                    <p>Record:</p>
                 </div>
             </div>
         </div>
         <div id="spriteUsuario" class="gridElementSpriteUsuario">
         </div>
     </div>
+
+    <audio autoplay src="musica/8 bit II.mp3" type="audio/mp3" id="musicaFondo" loop="loop"></audio>
+
+
 </body>
 
 </html>
