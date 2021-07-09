@@ -79,14 +79,14 @@ function generarAtaquesEnemigo(){
     let numAletorioAtaque=Math.floor(Math.random() * 3);
     console.log("Ataque enemigo"+numAletorioAtaque);
     if (numAletorioAtaque==0){
-        document.getElementById("historialBatallas").innerHTML+="<br>Se ha inflingido 10 de daño.";
+        document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>";
         vidaUsuario=vidaUsuario-10;    
     }
     if (numAletorioAtaque==2){
-        document.getElementById("historialBatallas").innerHTML+="<br>Se ha inflingido 20 de daño.";
+        document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>HAS INFLINGIDO 20 DE DAÑO.</p>";
         vidaUsuario=vidaUsuario-20;
     }else{
-        document.getElementById("historialBatallas").innerHTML+="<br>Se ha activado la defensa.";
+        document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
     }
     //10.20.def (defensaEnemigo)
     
@@ -98,10 +98,10 @@ function calcularSkillDefensa(){
     console.log("defensa usuario"+defensa);
    
     if (defensa==0){
-        document.getElementById("historialBatallas").innerHTML+="<br>Se ha activado la defensa.";
+        document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>";
        
     }else{
-        document.getElementById("historialBatallas").innerHTML+="<br>Se ha inflingido 30 de daño.";
+        document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>TE HAN INFLINGIDO 10 DE DAÑO.</p>";
         vidaUsuario=vidaUsuario-30;
     
     }
@@ -113,10 +113,10 @@ let defensaEnemigo=Math.floor(Math.random() * 2);
 console.log("defensa enemigo"+defensaEnemigo);
 
 if (defensaEnemigo==0){
-    document.getElementById("historialBatallas").innerHTML+="<br>Se ha activado la defensa.";
+    document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
    
 }else{
-    document.getElementById("historialBatallas").innerHTM+="<br>Se ha inflingido 30 de daño.";
+    document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>HAS INFLINGIDO 20 DE DAÑO.</p>";
     vidaEnemigo=vidaEnemigo-1;
 
 }

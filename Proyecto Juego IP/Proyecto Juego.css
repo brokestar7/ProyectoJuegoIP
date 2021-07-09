@@ -137,3 +137,11 @@ button {
     height: 150px;
     width: 150px;
 }
+
+.daño{
+    color: red;
+}
+
+.defensa{
+    color: royalblue;
+}
