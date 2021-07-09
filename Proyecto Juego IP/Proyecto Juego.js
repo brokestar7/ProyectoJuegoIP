@@ -61,7 +61,7 @@ function generarCombate() {
     //document que cambia el src del audio
     mostrarLayoutAtaques();
     calcularSkillDefensa();
-    calcularSkillDefensaEnemigo();
+    //calcularSkillDefensaEnemigo();
     generarAtaquesEnemigo();
 }
 
@@ -78,17 +78,18 @@ function mostrarLayoutAtaques() {
 function generarAtaquesEnemigo(){
     let numAletorioAtaque=Math.floor(Math.random() * 3);
     console.log("Ataque enemigo"+numAletorioAtaque);
-    if (numAletorioAtaque==0){
+    if (numAletorioAtaque==0){//ATAQUE 1
         document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>";
         vidaUsuario=vidaUsuario-10;    
     }
-    if (numAletorioAtaque==2){
+    if (numAletorioAtaque==2){//ATAQUE 2
         document.getElementById("historialBatallas").innerHTML+="<br><p class='daño'>HAS INFLINGIDO 20 DE DAÑO.</p>";
         vidaUsuario=vidaUsuario-20;
-    }else{
-        document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+    }else{//DEFENSA
+        calcularSkillDefensaEnemigo();
+        //document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
     }
-    //10.20.def (defensaEnemigo)
+    
     
 }
 
