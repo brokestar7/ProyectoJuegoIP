@@ -58,16 +58,10 @@ function generarVidasEnemigo() {
 
 //5 botones de ataque del usuario (3 ataques, 1 defensa y 1 pocima de recuperación)
 function generarCombate() {
-    /* for (i=0;i<5;i++){
-          document.getElementById("botonesAtaques").innerHTML
-          "<a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutAtaques("+i+")'> "+"<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='50px' height='50px' >"+" </a> ";
-          compararCombate();
-      }*/
 
     document.getElementById("musicaFondo").src = "musica/8 bit I.mp3";
     //document que cambia el src del audio
     mostrarLayoutAtaques();
-
 }
 
 function mostrarLayoutAtaques() {
@@ -107,10 +101,57 @@ function calcularDaño() {
 
 }
 
+
+function generarAtaquesEnemigo() {
+    let numAletorioAtaque = Math.floor(Math.random() * 3);
+    console.log("Ataque enemigo" + numAletorioAtaque);
+    if (numAletorioAtaque == 0) { //ATAQUE 1
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 10 DE DAÑO.</p>";
+        //vidaUsuario=vidaUsuario-10;    
+    }
+    if (numAletorioAtaque == 2) { //ATAQUE 2
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 20 DE DAÑO.</p>";
+        // vidaUsuario=vidaUsuario-20;
+    } else { //DEFENSA
+        calcularSkillDefensaEnemigo();
+        //document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+    }
+
+
+}
+
+function calcularSkillDefensa() {
+
+    let defensa = Math.floor(Math.random() * 2);
+    console.log("defensa usuario" + defensa);
+
+    if (defensa == 0) {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>";
+
+    } else {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 10 DE DAÑO.</p>";
+        //vidaUsuario=vidaUsuario-30;
+
+    }
+}
+
+function calcularSkillDefensaEnemigo() {
+
+    let defensaEnemigo = Math.floor(Math.random() * 2);
+    console.log("defensa enemigo" + defensaEnemigo);
+
+    if (defensaEnemigo == 0) {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensaEnemigo'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+
+    } else {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='dañoEnemigo'>HAS INFLINGIDO 20 DE DAÑO.</p>";
+        //vidaEnemigo=vidaEnemigo-1;
+
+    }
+}
+
 function calcularSkillHeal() {
-
     if (contadorCorazones >= 18) {
-
         contadorCorazones = contadorCorazones;
         contadorMana = contadorMana;
     } else {
@@ -120,12 +161,9 @@ function calcularSkillHeal() {
         document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
     }
 
-    //alert("contador vidas " + contadorCorazones);
-    //alert("contador mana " + contadorMana);
-
-    //document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
-    //alert("llega");
 }
+
+
 
 function mutearMusica() {
 

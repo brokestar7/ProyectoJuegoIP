@@ -183,3 +183,19 @@ button {
         height: 30px;
         width: 30px;
     }
+
+    .daño {
+        color: red;
+    }
+
+    .defensa {
+        color: royalblue;
+    }
+
+    .defensaEnemigo {
+        color: rgb(39, 62, 133);
+    }
+
+    .dañoEnemigo {
+        color: rgb(172, 20, 20);
+    }
