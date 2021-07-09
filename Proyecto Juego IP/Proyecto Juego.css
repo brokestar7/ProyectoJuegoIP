@@ -102,7 +102,7 @@ body {
     background: #c7ecee;
     text-align: center;
     padding: 20px;
-    margin: 10px;
+    margin: 5px 10px;
     font-size: 30px;
     color: #130f40;
 }
@@ -133,6 +133,7 @@ button {
     border-radius: 10px;
 
 }
+
 #fondoJuego {
     background-repeat: no-repeat;
     background-size: cover;
@@ -142,4 +143,39 @@ button {
 .sprites {
     height: 150px;
     width: 150px;
+}
+
+.gridElementInterfazEnemigo {
+    display: grid;
+    grid-template-rows: auto auto 400px;
+    border: #535c68 4px solid;
+    box-shadow: #535c68 10px 8px 6px;
+    border-radius: 20px;
+    background: #c7ecee;
+    margin: 5px 10px 10px 5px;
+    padding: 12px;
+    color: #130f40;
+    align-items: flex-start;
+    font-size: 12px;
+    text-transform: uppercase;
+    gap: 5px;
+}
+
+.gridElementInterfazEnemigo>div {
+    border: 2px solid #535c68;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #130f40;
+    color: #c7ecee;
+    font-size: 10px;
+}
+
+.cuadroDaño {
+    height: 375px;
+    border: #535c68 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 13px;
+    overflow: scroll;
 }
