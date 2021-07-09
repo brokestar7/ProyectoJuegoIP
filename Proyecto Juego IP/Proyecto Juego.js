@@ -104,8 +104,6 @@ function compararCombate(opcionElegida){
 
 function calcularDaño(){
 
-    alert("llega");
-
 }
 
 function calcularSkillHeal(){
@@ -146,13 +144,7 @@ function desmutearMusica(){
     document.getElementById("botonMusica").innerHTML= '<button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>'
 }
 
-
-
-
-
-
-
-
+restarVidas()
 //     quitarVidaHumano();
 //     quitarVidaEnemigo();
 //     restarMp();           
