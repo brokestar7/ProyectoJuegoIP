@@ -37,7 +37,7 @@ function randomizar() {
 
 function generarFondo() {
     numeroAleatorioFondo = Math.floor(Math.random() * 4);
-    document.getElementById("fondoJuego").innerHTML = "<img class='imagenFondo' src='Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "'>";
+    document.getElementById("fondoJuego").style.backgroundImage = "url('Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "')";
 }
 
 function generarEnemigo() {
