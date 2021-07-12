@@ -16,11 +16,9 @@ function iniciarJuego() {
 }
 
 function inicializar() {
-    document.getElementsByClassName("layoutSkills").innerHTML = "";
-    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
+    // document.getElementsByClassName("layoutSkills").innerHTML = "";
 
 }
-
 function generarVidas() {
     document.getElementById("contenedorCorazones").innerHTML = "";
     for (i = 0; i < contadorCorazones; i++) {
@@ -101,7 +99,7 @@ function calcularDaño(ataqueElegido) {
     switch (ataqueElegido) {
         case 0:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 1;
-            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 1 DE DAÑO.</p>";
+            document.getElementById("historialBatallas").innerHTML += "<br><div class='daño'>HAS INFLINGIDO 1 DE DAÑO.</div>";
             alert(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
@@ -172,7 +170,7 @@ function calcularSkillDefensaEnemigo(ataqueUser) {
     console.log("defensa enemigo" + defensaEnemigo);
 
     if (defensaEnemigo == 0) {
-        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensaEnemigo'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+        document.getElementById("historialBatallas").innerHTML += "<br><span class='defensaEnemigo'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
 
     } else {
         if (ataqueUser == 0) { //ATAQUE 1
@@ -198,11 +196,12 @@ function calcularSkillHeal() {
 
 
 }
-if (contadorCorazonesEnemigo = 0) {
-    ganarBatalla();
-} else if (contadorCorazones = 0) {
-    perderBatalla();
-}
+//este if y else hace que el contador de corazones de enemigo y usuario se ponga en 0 al empezar el codigo. son las 4 lineas debajo de este comentario
+// if (contadorCorazonesEnemigo = 0) {
+//     ganarBatalla();
+// } else if (contadorCorazones = 0) {
+//     perderBatalla();
+// }
 
 function ganarBatalla() {
     // generar flecha con la funcion "siguienteNivel()" y el document especifico del src del audio y el texto de que has ganado la batalla. Sumar mana y vida.

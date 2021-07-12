@@ -164,8 +164,7 @@ button {
 .gridElementInterfazEnemigo>div {
     border: 2px solid #535c68;
     border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+    padding: 10px; 
     background-color: #130f40;
     color: #c7ecee;
     font-size: 10px;
@@ -175,10 +174,11 @@ button {
     height: 375px;
     border: #535c68 2px solid;
     border-radius: 10px;
-    padding: 5px;
-    font-size: 13px;
+    padding: 5px; 
+    font-size: 10px; 
     overflow: scroll;
 }
+
 
 .imgAltavoz {
     height: 30px;
@@ -187,16 +187,20 @@ button {
 
 .daño {
     color: red;
+    line-height: 15px;
 }
 
 .defensa {
-    color: royalblue;
+    color: #c7ecee;
+    line-height: 15px;
 }
 
 .defensaEnemigo {
-    color: rgb(39, 62, 133);
+    color: rgb(75, 171, 235);
+    line-height: 15px;
 }
 
 .dañoEnemigo {
     color: rgb(172, 20, 20);
+    line-height: 15px;
 }
