@@ -24,12 +24,14 @@
     </div>
 
     <div class="grid">
-        <div class="gridElement ">Salud Enemigo
-            <div id="contenedorCorazonesEnemigo">
+        <div id="mostrarLayoutEnemigo" class="gridElementInterfazEnemigo ">
+            <div>Salud Enemigo</div>
+            <div id="contenedorCorazonesEnemigo"></div>
+            <div id="historialBatallas" class="cuadroDaño">
             </div>
         </div>
         <div id="fondoJuego" class="gridElement">
-            <img class="imagenFondo" src="Imagenes proyecto juego/fondoPraderaDia.jpg">
+            <!-- <img class="imagenFondo" src="Imagenes proyecto juego/fondoPraderaDia.jpg"> -->
         </div>
         <div id="mostrarLayoutAtaques" class="gridAnidadoInterfazUsuario">
             <div id="skill1"></div>
@@ -48,19 +50,23 @@
         <div class="gridElement">
             <div class="gridAnidadoMenuInferior">
                 <div class="cuadroHistoria">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti,necessitatibus. Lorem ipsum
-                    dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur, deserunt
-                    accusamus quaerat ab laudantium voluptate qui voluptatum dignissimos modi, molestiae accusantium!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eligendi hic sapiente, saepe
-                    odio quae mollitia consectetur corporis reprehenderit expedita temporibus laboriosam explicabo
-                    minima vel beatae. Reprehenderit corporis animi id!
+                    En un mundo donde todo parecen normal, algo ha ido cambiando. Una fuerza oscura ha empezado a
+                    emerger y ganar poder.
+                    Varios guerreros han intentado luchar contra ella, pero al final son vencidos por el oscuro deseo de
+                    su corazón convirtiéndoles en seres irreconocibles.
+                    Los guerreros caídos han estado encerrados en sus mentes, ¿Serás tú guerrero misterioso quién los
+                    libere?
+                    Esperemos que tu corazón sea digno de superar los retos de la travesía y dar fin al reinado del
+                    oscuridad..
+
                 </div>
                 <div class="cuadroMenu">
                     <div id="botonJuego">
                         <button type="button" onclick="iniciarJuego()">¡JUGAR!</button>
                     </div>
                     <div id="botonMusica">
-                        <button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>
+                        <button type="button" onclick="mutearMusica()"><img class="imgAltavoz"
+                                src="Imagenes objetos/desmute.png"></button>
                     </div>
                     <p>Record:</p>
                 </div>

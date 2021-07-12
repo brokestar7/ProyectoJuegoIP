@@ -3,16 +3,16 @@ let arrAtaques = ["Ataque 1", "Ataque 2", "Ataque 3", "Vida", "Defensa"];
 let arrImgAtaques = ["espada4.png", "espada11.gif", "espada12.gif", "pocionVida.png", "shield.png"];
 let numeroAleatorioEnemigo;
 let numeroAleatorioFondo;
-let numeroAletorioAtaque;
+let numAletorioAtaque;
 let contadorCorazones = 20;
 let contadorCorazonesEnemigo = 20;
-let contadorMana= 100;
+let contadorMana = 100;
 
 function iniciarJuego() {
     inicializar();
     randomizar();
     generarVidas();
-    
+
 }
 
 function inicializar() {
@@ -22,6 +22,7 @@ function inicializar() {
 }
 
 function generarVidas() {
+    document.getElementById("contenedorCorazones").innerHTML = "";
     for (i = 0; i < contadorCorazones; i++) {
         document.getElementById("contenedorCorazones").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazon.png'>";
     }
@@ -39,8 +40,7 @@ function randomizar() {
 
 function generarFondo() {
     numeroAleatorioFondo = Math.floor(Math.random() * 4);
-    document.getElementById("fondoJuego").innerHTML = "<img class='imagenFondo' src='Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "'>";
-    //document.getElementById("fondo juego").innerHTML='<img class="imagenFondo" src="Imagenes proyecto juego/' + arrFondos[numeroAleatorioFondo];
+    document.getElementById("fondoJuego").style.backgroundImage = "url('Imagenes proyecto juego/" + arrFondos[numeroAleatorioFondo] + "')";
 }
 
 function generarEnemigo() {
@@ -52,6 +52,7 @@ function generarEnemigo() {
 }
 
 function generarVidasEnemigo() {
+    document.getElementById("contenedorCorazonesEnemigo").innerHTML = "";
     for (i = 0; i < contadorCorazonesEnemigo; i++) {
         document.getElementById("contenedorCorazonesEnemigo").innerHTML += "<img class='imgCorazon' src='Imagenes proyecto juego/imagenCorazonEnemigo.png'>";
     }
@@ -59,16 +60,10 @@ function generarVidasEnemigo() {
 
 //5 botones de ataque del usuario (3 ataques, 1 defensa y 1 pocima de recuperación)
 function generarCombate() {
-    /* for (i=0;i<5;i++){
-          document.getElementById("botonesAtaques").innerHTML
-          "<a href='#' id='botonesAtaques"+i+"' onclick='generarLayoutAtaques("+i+")'> "+"<img src='Imagenes objetos/"+arrImgAtaques[i]+"' width='50px' height='50px' >"+" </a> ";
-          compararCombate();
-      }*/
-    
+
     document.getElementById("musicaFondo").src = "musica/8 bit I.mp3";
     //document que cambia el src del audio
     mostrarLayoutAtaques();
-    
 }
 
 function mostrarLayoutAtaques() {
@@ -79,69 +74,157 @@ function mostrarLayoutAtaques() {
     document.getElementById("skill5").innerHTML = "<div class='layoutSkills' onclick='compararCombate(2)'> " + arrAtaques[2] + " <img src='Imagenes objetos/" + arrImgAtaques[2] + "'>" + " </div>";
     document.getElementById("skill6").innerHTML = "<div class='layoutSkills' onclick='compararCombate(3)'> " + arrAtaques[3] + " <img src='Imagenes objetos/" + arrImgAtaques[3] + "'>" + " </div>";
     document.getElementById("skill7").innerHTML = "<div class='layoutSkills' onclick='compararCombate(4)'> " + arrAtaques[4] + " <img src='Imagenes objetos/" + arrImgAtaques[4] + "'>" + " </div>";
-} 
+}
 
-function compararCombate(opcionElegida){
+function compararCombate(opcionElegida) {
 
-    switch(opcionElegida) {
+    switch (opcionElegida) {
         case 0:
-          calcularDaño();
-          break;
+            calcularDaño(opcionElegida);
+            break;
         case 1:
-          calcularDaño();
-          break; 
+            calcularDaño(opcionElegida);
+            break;
         case 2:
-          calcularDaño();
-          break;
+            calcularDaño(opcionElegida);
+            break;
         case 3:
-          calcularSkillHeal();//añadir vida, añadir fx sonido
-          break;
+            calcularSkillHeal(); //añadir vida, añadir fx sonido
+            break;
         case 4:
-          calcularSkillDefense();
-          break;
-      } 
+            calcularSkillDefensa(opcionElegida);
+            break;
+    }
 }
 
-function calcularDaño(){
-
-}
-
-function calcularSkillHeal(){
-
-    if(contadorCorazones >= 18){
-
-        contadorCorazones = contadorCorazones;
-        contadorMana = contadorMana;
+function calcularDaño(ataqueElegido) {
+    switch (ataqueElegido) {
+        case 0:
+            contadorCorazonesEnemigo = contadorCorazonesEnemigo - 1;
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 1 DE DAÑO.</p>";
+            alert(contadorCorazonesEnemigo);
+            generarAtaquesEnemigo(ataqueElegido);
+            generarVidasEnemigo();
+            alert("vida usuario" + contadorCorazones);
+            break;
+        case 1:
+            contadorCorazonesEnemigo = contadorCorazonesEnemigo - 5;
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 5 DE DAÑO.</p>";
+            alert(contadorCorazonesEnemigo);
+            generarAtaquesEnemigo(ataqueElegido);
+            alert("vida usuario" + contadorCorazones);
+            break;
+        case 2:
+            contadorCorazonesEnemigo = contadorCorazonesEnemigo - 10;
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>";
+            alert(contadorCorazonesEnemigo);
+            generarAtaquesEnemigo(ataqueElegido);
+            alert("vida usuario" + contadorCorazones);
+            break;
     }
 
-    else{
-
-        contadorCorazones = contadorCorazones + 3;// vidas aumentan 3
-        contadorMana = contadorMana - 20;;// mana disminuye 20
-        document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
-    }
-
-    //alert("contador vidas " + contadorCorazones);
-    //alert("contador mana " + contadorMana);
-
-    //document.getElementById("fxSounds").innerHTML= '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';//genera el audio con el fx de sonido de la vida
-    //alert("llega");
 }
 
-function mutearMusica(){
+
+function generarAtaquesEnemigo(opcionElegida) {
+    numAletorioAtaque = Math.floor(Math.random() * 3);
+    console.log("Ataque enemigo" + numAletorioAtaque);
+    contadorCorazones = contadorCorazones - 1;
+    if (numAletorioAtaque == 0) { //ATAQUE 1
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>";
+        generarVidas();
+    } else if (numAletorioAtaque == 1) { //ATAQUE 2
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>";
+        contadorCorazones = contadorCorazones - 5;
+        generarVidas();
+    } else { //DEFENSA
+        calcularSkillDefensaEnemigo(opcionElegida);
+        //document.getElementById("historialBatallas").innerHTML+="<br><p class='defensa'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+    }
+
+
+}
+
+function calcularSkillDefensa() {
+    numAletorioAtaque = Math.floor(Math.random() * 2);
+    let defensa = Math.floor(Math.random() * 2);
+    console.log("defensa usuario" + defensa);
+
+    if (defensa == 0) {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>";
+        alert("vida usuario" + contadorCorazones);
+    } else {
+        if (numAletorioAtaque == 0) { //ATAQUE 1
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>";
+            contadorCorazones = contadorCorazones - 1;
+        } else if (numAletorioAtaque == 1) { //ATAQUE 2
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>";
+            contadorCorazones = contadorCorazones - 5;
+            alert("vida usuario" + contadorCorazones);
+        }
+    }
+}
+
+function calcularSkillDefensaEnemigo(ataqueUser) {
+
+    let defensaEnemigo = Math.floor(Math.random() * 2);
+    console.log("defensa enemigo" + defensaEnemigo);
+
+    if (defensaEnemigo == 0) {
+        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensaEnemigo'>SE HA ACTIVADO EL ESCUDO ENEMIGO.</p>";
+
+    } else {
+        if (ataqueUser == 0) { //ATAQUE 1
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 1 DE DAÑO.</p>";
+            contadorCorazonesEnemigo = contadorCorazonesEnemigo - 1;
+        } else if (ataqueUser == 1) { //ATAQUE 2
+            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 5 DE DAÑO.</p>";
+            contadorCorazonesEnemigo = contadorCorazonesEnemigo - 5;
+            alert("vida usuario" + contadorCorazones);
+        }
+    }
+
+}
+
+function calcularSkillHeal() {
+    // contadorCorazones = contadorCorazones;
+    // contadorMana = contadorMana;
+    contadorCorazones = contadorCorazones + 3; // vidas aumentan 3
+    contadorMana = contadorMana - 20;; // mana disminuye 20
+    document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
+    generarVidas();
+    console.log(contadorMana + "mana user");
+
+
+}
+if (contadorCorazonesEnemigo = 0) {
+    ganarBatalla();
+} else if (contadorCorazones = 0) {
+    perderBatalla();
+}
+
+function ganarBatalla() {
+    // generar flecha con la funcion "siguienteNivel()" y el document especifico del src del audio y el texto de que has ganado la batalla. Sumar mana y vida.
+}
+
+function perderBatalla() {
+    // mensaje de que has perdido. document especifico del audio y mutear musica de fondo. 
+}
+
+function mutearMusica() {
 
     let backgroundMusic = document.getElementById("musicaFondo");
 
     backgroundMusic.muted = true;
-    document.getElementById("botonMusica").innerHTML= '<button type="button" onclick="desmutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/mute.png"></button>'
+    document.getElementById("botonMusica").innerHTML = '<button type="button" onclick="desmutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/mute.png"></button>'
 }
 
-function desmutearMusica(){
+function desmutearMusica() {
 
     let backgroundMusic = document.getElementById("musicaFondo");
 
     backgroundMusic.muted = false;
-    document.getElementById("botonMusica").innerHTML= '<button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>'
+    document.getElementById("botonMusica").innerHTML = '<button type="button" onclick="mutearMusica()"><img class="imgAltavoz" src="Imagenes objetos/desmute.png"></button>'
 }
 
 restarVidas()
