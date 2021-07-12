@@ -116,26 +116,26 @@ function calcularDaño(ataqueElegido) {
         case 0:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 1;
             document.getElementById("historialBatallas").innerHTML += "<br><div class='daño'>HAS INFLINGIDO 1 DE DAÑO.</div>";
-            alert(contadorCorazonesEnemigo);
+            console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
-            alert("vida usuario" + contadorCorazones);
+            console.log("vida usuario" + contadorCorazones);
             break;
         case 1:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 5;
             document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 5 DE DAÑO.</p>";
-            alert(contadorCorazonesEnemigo);
+            console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
-            alert("vida usuario" + contadorCorazones);
+            console.log("vida usuario" + contadorCorazones);
             break;
         case 2:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 10;
             document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>";
-            alert(contadorCorazonesEnemigo);
+            console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
-            alert("vida usuario" + contadorCorazones);
+            console.log("vida usuario" + contadorCorazones);
             break;
     }
 
@@ -165,7 +165,7 @@ function calcularSkillDefensa() {
 
     if (defensa == 0) {
         document.getElementById("historialBatallas").innerHTML += "<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>";
-        alert("vida usuario" + contadorCorazones);
+        console.log("vida usuario" + contadorCorazones);
     } else {
         if (numAletorioAtaque == 0) { //ATAQUE 1
             document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>";
@@ -175,7 +175,7 @@ function calcularSkillDefensa() {
             document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>";
             contadorCorazones = contadorCorazones - 5;
             generarVidas();
-            alert("vida usuario" + contadorCorazones);
+            console.log("vida usuario" + contadorCorazones);
         }
     }
 }
@@ -185,7 +185,7 @@ function calcularSkillHealEnemigo() {
     contadorCorazonesEnemigo = contadorCorazonesEnemigo + 3;
     generarVidasEnemigo();
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
-
+    document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>EL ENEMIGO SE HA CURADO.</p>";
 
 }
 
@@ -214,7 +214,7 @@ function ganarBatalla() {
 
     backgroundMusic.muted = true; //muteo musica fondo
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/Win.mp3" type="audio/mp3"></audio>'; //fx sonido victoria
-    document.getElementById("historialBatallas").innerHTML = "¡HAS GANADO! <img src=''>";
+    document.getElementById("historialBatallas").innerHTML = "¡HAS GANADO!";
     contadorMana = contadorMana + 50; // hay que concretar cuanto se suma
     // falta generar flecha con la funcion "siguienteNivel()"
 }
@@ -226,7 +226,8 @@ function perderBatalla() {
     backgroundMusic.muted = true; // muteo musica fondo
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/GameOver.mp3" type="audio/mp3"></audio>'; //fx sonido derrota
     document.getElementById("historialBatallas").innerHTML = "¡HAS PERDIDO! <img class='imgGameOver' src='imagenes proyecto juego/dead.gif'>"; //gif game over
-    document.getElementById("spriteEnemigo").innerHTML = "<img class='imgGameOver' src='imagenes proyecto juego/dead2.gif'>"
+    document.getElementById("personajeSeleccionado").innerHTML = "<img class='imgGameOver' src='imagenes proyecto juego/dead2.gif'>"
+    document.getElementById("contenedorCorazones").innerHTML = "";
 }
 
 function mutearMusica() {

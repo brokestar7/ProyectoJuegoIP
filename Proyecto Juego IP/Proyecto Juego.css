@@ -58,6 +58,8 @@
 }
 
 .cuadroMenu {
+    display: grid;
+    grid-template-columns: 50% 50%;
     border: #535c68 2px solid;
     background-color: #c7ecee;
     border-radius: 10px;
@@ -66,9 +68,6 @@
     font-size: 14px;
 }
 
-.cuadroMenu>p {
-    margin: 5px;
-}
 
 
 
@@ -237,4 +236,30 @@ button {
     height: 80px;
     width: 80px;
 
+}
+
+#personajeSeleccionado>.imgGameOver {
+    margin-top: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+#spriteEnemigo>.imgGameOver {
+    height: 200px;
+    width: 200px;
+}
+
+.linkContacto {
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    background-color: #f9ca24;
+    border: #535c68 2px solid;
+    color: #130f40;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 10px;
 }
