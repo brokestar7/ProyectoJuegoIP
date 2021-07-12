@@ -33,7 +33,6 @@ function generarSpriteUsuario() {
     document.getElementById("spriteUsuario").innerHTML = "<img class='sprites' src='Imagenes personajes/personaje3.gif' alt='spriteUsuario'>";
 }
 
-
 function randomizar() {
     generarFondo();
     generarEnemigo();
@@ -178,7 +177,7 @@ function calcularSkillHealEnemigo() {
     contadorCorazonesEnemigo = contadorCorazonesEnemigo + 3;
     generarVidasEnemigo();
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
-   
+    document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>EL ENEMIGO SE HA CURADO</p>";
 
 }
 
