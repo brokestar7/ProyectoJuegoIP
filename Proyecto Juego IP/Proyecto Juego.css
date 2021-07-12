@@ -164,7 +164,7 @@ button {
 .gridElementInterfazEnemigo>div {
     border: 2px solid #535c68;
     border-radius: 10px;
-    padding: 10px; 
+    padding: 10px;
     background-color: #130f40;
     color: #c7ecee;
     font-size: 10px;
@@ -174,8 +174,8 @@ button {
     height: 375px;
     border: #535c68 2px solid;
     border-radius: 10px;
-    padding: 5px; 
-    font-size: 10px; 
+    padding: 5px;
+    font-size: 10px;
     overflow: scroll;
 }
 
@@ -203,4 +203,32 @@ button {
 .dañoEnemigo {
     color: rgb(172, 20, 20);
     line-height: 15px;
+}
+
+.pjHombre {
+    max-width: 250px;
+    height: auto;
+    margin-top: 200px;
+    margin-right: 130px;
+    /* border: 2px solid red; */
+    justify-self: start;
+    cursor: pointer;
+    /* margin-top: 200px; */
+}
+
+.pjMujer {
+    max-width: 250px;
+    max-height: 250px;
+    margin-top: 200px;
+    /* border: 2px solid red; */
+    cursor: pointer;
+    justify-self: end;
+    /* margin-left: 300px; */
+}
+
+#spriteDelPersonaje {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: end;
+
 }
