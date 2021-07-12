@@ -200,3 +200,10 @@ button {
 .dañoEnemigo {
     color: rgb(172, 20, 20);
 }
+
+.imgGameOver{
+
+    height: 80px;
+    width: 80px;
+
+}
