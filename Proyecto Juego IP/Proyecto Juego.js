@@ -115,7 +115,7 @@ function calcularDaño(ataqueElegido) {
     switch (ataqueElegido) {
         case 0:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 1;
-            document.getElementById("historialBatallas").innerHTML += "<br><div class='daño'>HAS INFLINGIDO 1 DE DAÑO.</div>";
+            document.getElementById("historialBatallas").innerHTML = "<br><div class='daño'>HAS INFLINGIDO 1 DE DAÑO.</div>"+document.getElementById("historialBatallas").innerHTML;
             console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
@@ -123,7 +123,7 @@ function calcularDaño(ataqueElegido) {
             break;
         case 1:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 5;
-            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 5 DE DAÑO.</p>";
+            document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>HAS INFLINGIDO 5 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
             console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
@@ -131,7 +131,7 @@ function calcularDaño(ataqueElegido) {
             break;
         case 2:
             contadorCorazonesEnemigo = contadorCorazonesEnemigo - 10;
-            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>";
+            document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>HAS INFLINGIDO 10 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
             console.log(contadorCorazonesEnemigo);
             generarAtaquesEnemigo(ataqueElegido);
             generarVidasEnemigo();
@@ -146,10 +146,10 @@ function generarAtaquesEnemigo(opcionElegida) {
     console.log("Ataque enemigo" + numAletorioAtaque);
     contadorCorazones = contadorCorazones - 1;
     if (numAletorioAtaque == 0) { //ATAQUE 1
-        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>";
+        document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
         generarVidas();
     } else if (numAletorioAtaque == 1) { //ATAQUE 2
-        document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>";
+        document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
         contadorCorazones = contadorCorazones - 5;
         generarVidas();
     } else { //HEAL
@@ -164,15 +164,15 @@ function calcularSkillDefensa() {
     console.log("defensa usuario" + defensa);
 
     if (defensa == 0) {
-        document.getElementById("historialBatallas").innerHTML += "<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>";
+        document.getElementById("historialBatallas").innerHTML = "<br><p class='defensa'>SE HA ACTIVADO TU ESCUDO.</p>"+document.getElementById("historialBatallas").innerHTML;
         console.log("vida usuario" + contadorCorazones);
     } else {
         if (numAletorioAtaque == 0) { //ATAQUE 1
-            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>";
+            document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>TE HAN INFLINGIDO 1 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
             contadorCorazones = contadorCorazones - 1;
             generarVidas();
         } else if (numAletorioAtaque == 1) { //ATAQUE 2
-            document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>";
+            document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>TE HAN INFLINGIDO 5 DE DAÑO.</p>"+document.getElementById("historialBatallas").innerHTML;
             contadorCorazones = contadorCorazones - 5;
             generarVidas();
             console.log("vida usuario" + contadorCorazones);
@@ -185,7 +185,7 @@ function calcularSkillHealEnemigo() {
     contadorCorazonesEnemigo = contadorCorazonesEnemigo + 3;
     generarVidasEnemigo();
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
-    document.getElementById("historialBatallas").innerHTML += "<br><p class='daño'>EL ENEMIGO SE HA CURADO.</p>";
+    document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>EL ENEMIGO SE HA CURADO.</p>"+document.getElementById("historialBatallas").innerHTML;
 
 }
 
@@ -196,6 +196,7 @@ function calcularSkillHeal() {
     contadorMana = contadorMana - 20;; // mana disminuye 20
     document.getElementById("fxSounds").innerHTML = '<audio autoplay src="musica/vidasFx1.wav" type="audio/mp3"></audio>';
     generarVidas();
+    document.getElementById("historialBatallas").innerHTML = "<br><p class='daño'>TE HAS CURADO.</p>"+document.getElementById("historialBatallas").innerHTML;
     console.log(contadorMana + "mana user");
 }
 
