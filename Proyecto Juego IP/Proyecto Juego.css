@@ -58,6 +58,8 @@
 }
 
 .cuadroMenu {
+    display: grid;
+    grid-template-columns: 50% 50%;
     border: #535c68 2px solid;
     background-color: #c7ecee;
     border-radius: 10px;
@@ -66,9 +68,6 @@
     font-size: 14px;
 }
 
-.cuadroMenu>p {
-    margin: 5px;
-}
 
 
 
@@ -165,7 +164,6 @@ button {
     border: 2px solid #535c68;
     border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
     background-color: #130f40;
     color: #c7ecee;
     font-size: 10px;
@@ -176,9 +174,10 @@ button {
     border: #535c68 2px solid;
     border-radius: 10px;
     padding: 5px;
-    font-size: 13px;
+    font-size: 10px;
     overflow: scroll;
 }
+
 
 .imgAltavoz {
     height: 30px;
@@ -187,23 +186,88 @@ button {
 
 .daño {
     color: red;
+    line-height: 15px;
 }
 
 .defensa {
-    color: royalblue;
+    color: #c7ecee;
+    line-height: 15px;
 }
 
 .defensaEnemigo {
-    color: rgb(39, 62, 133);
+    color: rgb(75, 171, 235);
+    line-height: 15px;
 }
 
 .dañoEnemigo {
     color: rgb(172, 20, 20);
+    line-height: 15px;
 }
 
-.imgGameOver{
+.pjHombre {
+    max-width: 250px;
+    height: auto;
+    margin-top: 200px;
+    margin-right: 300px;
+    /* border: 2px solid red; */
+    justify-self: start;
+    cursor: pointer;
+    /* margin-top: 200px; */
+}
+
+.pjMujer {
+    max-width: 250px;
+    max-height: 250px;
+    margin-top: 200px;
+    margin-right: 100px;
+    /* border: 2px solid red; */
+    cursor: pointer;
+    justify-self: end;
+    /* margin-left: 300px; */
+}
+
+#spriteDelPersonaje {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: end;
+}
+
+.imgGameOver {
 
     height: 80px;
     width: 80px;
+
+}
+
+#personajeSeleccionado>.imgGameOver {
+    margin-top: 200px;
+    height: 300px;
+    width: 300px;
+}
+
+#spriteEnemigo>.imgGameOver {
+    height: 300px;
+    width: 300px;
+}
+
+.linkContacto {
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    background-color: #f9ca24;
+    border: #535c68 2px solid;
+    color: #130f40;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#flechaIniciar{
+
+    height: 300px;
+    width: 300px;
 
 }
